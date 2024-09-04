@@ -21,7 +21,7 @@ const bundles = [
     rarity: "orange",
     color: "#F9B428",
   },
-]
+];
 
 const offers1 = [
   {
@@ -133,8 +133,8 @@ const offers3 = [
     image: "/popstar.png",
     rarity: "red",
     color: "#EA3546",
-  }
-]
+  },
+];
 
 const offers4 = [
   {
@@ -212,7 +212,7 @@ export default function Shop() {
   useEffect(() => {
     const shopResetDate = new Date(Date.UTC(2024, 8, 10, 20, 0, 0, 0)); // October is month 9 (0-indexed)
 
-    console.log(shopResetDate)
+    console.log(shopResetDate);
 
     const updateCountdownFeatured = () => {
       const now = new Date();
@@ -271,14 +271,15 @@ export default function Shop() {
               />
               <div className="p-4">
                 <h3
-                  className={`text-lg font-semibold mb-2`} style={{
-                    color: item.color
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
                   }}
                 >
                   {item.name}
                 </h3>
                 <div className="flex items-center">
-                  <Coins className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -303,15 +304,16 @@ export default function Shop() {
                 className="w-full h-3/4 object-cover"
               />
               <div className="p-4">
-              <h3
-                  className={`text-lg font-semibold mb-2`} style={{
-                    color: item.color
+                <h3
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
                   }}
                 >
                   {item.name}
                 </h3>
                 <div className="flex items-center">
-                  <Coins className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -331,14 +333,15 @@ export default function Shop() {
               />
               <div className="p-4">
                 <h3
-                  className={`text-lg font-semibold mb-2`} style={{
-                    color: item.color
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
                   }}
                 >
                   {item.name}
                 </h3>
                 <div className="flex items-center">
-                  <Coins className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -358,14 +361,15 @@ export default function Shop() {
               />
               <div className="p-4">
                 <h3
-                  className={`text-lg font-semibold mb-2`} style={{
-                    color: item.color
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
                   }}
                 >
                   {item.name}
                 </h3>
                 <div className="flex items-center">
-                  <Coins className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -385,14 +389,15 @@ export default function Shop() {
               />
               <div className="p-4">
                 <h3
-                  className={`text-lg font-semibold mb-2`} style={{
-                    color: item.color
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
                   }}
                 >
                   {item.name}
                 </h3>
                 <div className="flex items-center">
-                  <Coins className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
