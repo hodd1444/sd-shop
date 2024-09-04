@@ -51,7 +51,7 @@ const offers1 = [
   {
     id: 4,
     name: "Eternal Warrior M49 Fury",
-    price: "1,300",
+    price: "1,200",
     image: "/eternal_warrior_m49_fury.png",
     rarity: "orange",
     color: "#F9B428",
@@ -78,7 +78,7 @@ const offers2 = [
   {
     id: 3,
     name: "Eternal Warrior Duster RX6",
-    price: "1,300",
+    price: "1,200",
     image: "/eternal_warrior_duster_rx6.png",
     rarity: "orange",
     color: "#F9B428",
@@ -148,7 +148,7 @@ const offers4 = [
   {
     id: 2,
     name: "Bloomtech Outfitters",
-    price: "1000",
+    price: "1,000",
     image: "/bloomtech_outfitters.png",
     rarity: "orange",
     color: "#F9B428",
@@ -416,7 +416,7 @@ export default function Shop() {
             </>
           )}
           <div className="flex flex-row justify-center align-middle items-center mt-4">
-            <Link href="https://github.com/hodd1444">
+            <Link href="https://github.com/hodd1444/sd-shop">
               <Github className="w-5 h-5 mr-4 hover:text-[#FFCB00]" />
             </Link>
             <p>Made with ❤️ by @hodd</p>
