@@ -234,10 +234,10 @@ export default function Shop() {
         </div>
     
         <div className="flex flex-col justify-between gap-8">
-          {bundles.map((item) => (
+          {bundles.map((item, index) => (
             <Link href={`/vault/bundle/${item.name.toLowerCase().split(" ").join("-")}`} className="hover:cursor-default">
             <div
-              key={item.id}
+              key={index}
               className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
             >
               <img
