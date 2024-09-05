@@ -160,27 +160,6 @@ export default function Shop() {
   const [featuredTimeLeft, setFeaturedTimeLeft] = useState("23:59:59");
 
   const shopAvailable = true;
-  const calcColor = (rarity: string): string => {
-    console.log(rarity, ": calcColor");
-    switch (rarity) {
-      case "common":
-        console.log("common");
-        return "#ffffff";
-      case "red":
-        console.log("red");
-        return "#EA3546";
-      case "orange":
-        console.log("orange");
-        return "#F9B428";
-      case "purple":
-        console.log("purple");
-        return "#B661FF";
-      default:
-        console.log("default");
-        return "#ababab";
-    }
-  };
-
   useEffect(() => {
     const shopResetDate = new Date(Date.UTC(2024, 9, 1, 20, 0, 0, 0)); // October is month 9 (0-indexed)
 
