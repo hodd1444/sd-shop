@@ -52,12 +52,12 @@ export default function ItemCard({
           </div>
           <div className="bg-[#333333] rounded-lg p-6 shadow-lg">
             {price === "bundle" && (
-              <p className="text-2xl text-[#EC3C7C] mb-4 flex items-center">
-                <Coins className="mr-2" size={24} />
+              <p className="text-2xl text-[#EC3C7C] mb-4 flex flex-wrap items-center">
+                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.png`} />
                 Only available in{" "}
                 <Link
                   className={`ml-4 hover:text-[#FFCB00] transition-all`}
-                  href={"/"}
+                  href={`/bundle/${items.bundles.find((b) => b.id === bundle)?.name.split(" ").join("-").toLowerCase()}`}
                 >
                   {items.bundles.find((b) => b.id === bundle)?.name}
                 </Link>
@@ -65,7 +65,7 @@ export default function ItemCard({
             )}
             {price !== "bundle" && (
               <p className="text-2xl text-[#EC3C7C] mb-4 flex items-center">
-                <Coins className="mr-2" size={24} />
+                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.png`} />
                 {price}
               </p>
             )}
@@ -107,15 +107,15 @@ export default function ItemCard({
               <p className="text-center mt-2 text-sm">Rarity: {rarity}</p>
             </div>
             {variants && (
-              <div className="grid grid-cols-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 mb-4">
                 {variants.map((variant, index) => (
                   <button onClick={changeVariant(variant.image)} key={index}>
-                    <div className="flex flex-col items-center justify-between bg-[#333333] p-4 rounded-lg mb-4 shadow-md">
-                      <p className="text-xl font-semibold">{variant.name}</p>
+                    <div className="flex flex-col items-center justify-between gap-4 bg-[#333333] p-4 rounded-lg hover:bg-gray-700">
                       <div
                         className="w-16 h-16 bg-cover bg-center rounded-lg"
                         style={{ backgroundImage: `url(${variant.image})` }}
                       ></div>
+                      <p className="text-xl font-semibold">{variant.name}</p>
                     </div>
                   </button>
                 ))}

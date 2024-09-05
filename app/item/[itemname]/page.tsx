@@ -44,6 +44,15 @@ export default function ItemPage() {
           Back to Bundle
         </Link>
       )}
+      {item.bundle === 0 && (
+        <Link
+          href={`/`}
+          className="inline-flex items-center text-[#FFCB00] hover:underline mb-6"
+        >
+          <ArrowLeft className="mr-2" size={20} />
+          Back to Shop
+        </Link>
+      )}
       <div className="max-w-4xl mx-auto">
         <ItemCard {...item} />
       </div>

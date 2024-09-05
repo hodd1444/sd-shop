@@ -36,7 +36,7 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
         </h1>
         <div className="flex items-center justify-between mb-8">
           <p className="text-2xl text-[#EC3C7C] flex items-center">
-            <Coins className="mr-2" size={24} />
+            <img className="w-8 h-full mr-2" src="/spectre_points_pink.png" />
             {bundle.price}
           </p>
           <button className="bg-[#FFCB00] text-[#272727] py-2 px-6 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors">
@@ -58,8 +58,17 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
                 <div className="p-4">
                   <h3 className="text-xl font-semibold text-[#FFCB00] mb-2">
                     {skin.name}
-                  </h3>
-                  <p className="text-[#EC3C7C] mb-2">{skin.price}</p>
+                  </h3>{
+                    skin.price === "bundle" ? (
+                      <p className="flex flex-row text-[#EC3C7C] mb-2">
+                        <img className="w-6 h-6 mr-2" src="/spectre_points_pink.png" />Bundle only</p>
+                    ) : (
+                      <p className="flex flex-row text-[#EC3C7C] mb-2">
+                        <img className="w-6 h-6 mr-2" src="/spectre_points_pink.png" />
+                        {skin.price}
+                      </p>
+                    )
+                  }
                   <p className="text-sm">Rarity: {skin.rarity}</p>
                   <div className="mt-2 w-full h-2 bg-gray-700 rounded-full overflow-hidden">
                     <div

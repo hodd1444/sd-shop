@@ -249,9 +249,9 @@ export default function Shop() {
                   alt={item.name}
                   className="w-full h-3/4 object-cover"
                 />
-                <div className="p-4">
+                <div className="flex flex-row justify-between align-middle items-center p-4">
                   <h3
-                    className={`text-lg font-semibold mb-2`}
+                    className={`text-lg font-semibold`}
                     style={{
                       color: item.color,
                     }}
@@ -284,7 +284,7 @@ export default function Shop() {
                 alt={item.name}
                 className="w-full h-3/4 object-cover"
               />
-              <div className="p-4">
+              <div className="flex flex-col justify-between p-4">
                 <h3
                   className={`text-lg font-semibold mb-2`}
                   style={{
