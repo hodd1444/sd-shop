@@ -232,34 +232,38 @@ export default function Shop() {
           <h2 className="text-2xl font-semibold">FEATURED</h2>
           <p className="text-gray-400">{featuredTimeLeft}</p>
         </div>
-    
+
         <div className="flex flex-col justify-between gap-8">
-          {bundles.map((item, index) => (
-            <Link href={`/vault/bundle/${item.name.toLowerCase().split(" ").join("-")}`} className="hover:cursor-default">
-            <div
-              key={index}
-              className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
+          {bundles.map((item) => (
+            <Link
+              href={`/vault/bundle/${item.name
+                .toLowerCase()
+                .split(" ")
+                .join("-")}`}
+              className="hover:cursor-default"
+              key={item.id}
             >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-3/4 object-cover"
-              />
-              <div className="p-4">
-                <h3
-                  className={`text-lg font-semibold mb-2`}
-                  style={{
-                    color: item.color,
-                  }}
-                >
-                  {item.name}
-                </h3>
-                <div className="flex items-center">
-                  <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
-                  <span>{item.price}</span>
+              <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-3/4 object-cover"
+                />
+                <div className="p-4">
+                  <h3
+                    className={`text-lg font-semibold mb-2`}
+                    style={{
+                      color: item.color,
+                    }}
+                  >
+                    {item.name}
+                  </h3>
+                  <div className="flex items-center">
+                    <img src="/spectre_points.png" className="w-5 h-5 mr-1" />
+                    <span>{item.price}</span>
+                  </div>
                 </div>
               </div>
-            </div>
             </Link>
           ))}
         </div>
@@ -399,7 +403,11 @@ export default function Shop() {
             </>
           )}
           <div className="flex flex-row justify-center align-middle items-center mt-4">
-            <a target="_blank" href="https://github.com/hodd1444/sd-shop" rel="noopener noreferrer">
+            <a
+              target="_blank"
+              href="https://github.com/hodd1444/sd-shop"
+              rel="noopener noreferrer"
+            >
               <Github className="w-5 h-5 mr-4 hover:text-[#FFCB00]" />
             </a>
             <p>Made with ❤️ by @hodd</p>
