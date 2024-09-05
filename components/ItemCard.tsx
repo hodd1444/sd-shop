@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { Coins } from "lucide-react";
 import items from "@/items.json";
 import Link from "next/link";
@@ -25,11 +25,11 @@ export default function ItemCard({
   bundle,
   variants,
 }: ItemCardProps) {
-    const [selectedVariant, setSelectedVariant] = useState(image);
+  const [selectedVariant, setSelectedVariant] = useState(image);
 
-    const changeVariant = (image: string) => () => {
-        setSelectedVariant(image);
-    };
+  const changeVariant = (image: string) => () => {
+    setSelectedVariant(image);
+  };
 
   return (
     <div className="bg-[#272727] text-white">
@@ -109,11 +109,8 @@ export default function ItemCard({
             {variants && (
               <div className="grid grid-cols-4">
                 {variants.map((variant, index) => (
-                  <button onClick={changeVariant(variant.image)}>
-                    <div
-                      key={index}
-                      className="flex flex-col items-center justify-between bg-[#333333] p-4 rounded-lg mb-4 shadow-md"
-                    >
+                  <button onClick={changeVariant(variant.image)} key={index}>
+                    <div className="flex flex-col items-center justify-between bg-[#333333] p-4 rounded-lg mb-4 shadow-md">
                       <p className="text-xl font-semibold">{variant.name}</p>
                       <div
                         className="w-16 h-16 bg-cover bg-center rounded-lg"
