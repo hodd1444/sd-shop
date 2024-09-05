@@ -221,13 +221,6 @@ export default function Shop() {
   return (
     <div className="min-h-screen bg-[#272727] text-white p-8 flex flex-col items-center justify-center">
       <div className="max-w-5xl w-full">
-        <div className="mb-8 flex flex-col justify-center align-middle items-center">
-          <Link href="https://playspectre.com">
-            <img className="w-28 mb-8" src="/logo_yellow.png" />
-          </Link>
-          <h2 className="text-2xl font-semibold mb-8">Spectre Divide Shop</h2>
-        </div>
-
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">FEATURED</h2>
           <p className="text-gray-400">{featuredTimeLeft}</p>
