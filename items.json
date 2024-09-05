@@ -1,0 +1,39 @@
+{
+    "bundles": [
+        {
+            "id": 1,
+            "name": "Cryo Kinesis Bundle",
+            "price": "7,000",
+            "image": "/shop_090324/cryo_kinesis_bundle.png",
+            "rarity": "red",
+            "color": "#EA3546",
+            "items": [1]
+        }
+    ],
+    "outfits":[
+
+    ],
+    "weapons": [
+        {
+            "id": 1,
+            "name": "Cryo Kinesis Blackout",
+            "price": "bundle",
+            "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png",
+            "rarity": "red",
+            "color": "#EA3546",
+            "bundle": 1,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Red",
+                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout_red.png"
+                }
+            ]
+        }
+    ]
+}
