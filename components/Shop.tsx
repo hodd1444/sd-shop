@@ -236,7 +236,7 @@ export default function Shop() {
         <div className="flex flex-col justify-between gap-8">
           {bundles.map((item) => (
             <Link
-              href={`/vault/bundle/${item.name
+              href={`/bundle/${item.name
                 .toLowerCase()
                 .split(" ")
                 .join("-")}`}

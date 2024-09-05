@@ -10,13 +10,11 @@
             "items": [1]
         }
     ],
-    "outfits":[
-
-    ],
-    "weapons": [
+    "items": [
         {
             "id": 1,
             "name": "Cryo Kinesis Blackout",
+            "type": "weapon",
             "price": "bundle",
             "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png",
             "rarity": "red",
@@ -32,6 +30,17 @@
                     "id": 2,
                     "name": "Red",
                     "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout_red.png"
+                },
+                
+                {
+                    "id": 3,
+                    "name": "Pink",
+                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout_pink.png"
+                },
+                {
+                    "id": 4,
+                    "name": "Green",
+                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout_green.png"
                 }
             ]
         }

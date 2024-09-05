@@ -1,6 +1,8 @@
+'use client';
 import { Coins } from "lucide-react";
 import items from "@/items.json";
 import Link from "next/link";
+import { useState } from "react";
 
 interface ItemCardProps {
   id: number;
@@ -23,6 +25,12 @@ export default function ItemCard({
   bundle,
   variants,
 }: ItemCardProps) {
+    const [selectedVariant, setSelectedVariant] = useState(image);
+
+    const changeVariant = (image: string) => () => {
+        setSelectedVariant(image);
+    };
+
   return (
     <div className="bg-[#272727] text-white">
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -36,9 +44,9 @@ export default function ItemCard({
           <div className="lg:col-span-2">
             <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg">
               <img
-                src={image}
+                src={selectedVariant}
                 alt={name}
-                className="w-full h-auto object-cover"
+                className="w-full object-cover"
               />
             </div>
           </div>
@@ -99,15 +107,20 @@ export default function ItemCard({
               <p className="text-center mt-2 text-sm">Rarity: {rarity}</p>
             </div>
             {variants && (
-              <div>
+              <div className="grid grid-cols-4">
                 {variants.map((variant, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center justify-between bg-[#333333] p-4 rounded-lg mb-4"
-                  >
-                    <p className="text-xl font-semibold">{variant.name}</p>
-                    <img src={variant.image}/>
-                  </div>
+                  <button onClick={changeVariant(variant.image)}>
+                    <div
+                      key={index}
+                      className="flex flex-col items-center justify-between bg-[#333333] p-4 rounded-lg mb-4 shadow-md"
+                    >
+                      <p className="text-xl font-semibold">{variant.name}</p>
+                      <div
+                        className="w-16 h-16 bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${variant.image})` }}
+                      ></div>
+                    </div>
+                  </button>
                 ))}
               </div>
             )}
