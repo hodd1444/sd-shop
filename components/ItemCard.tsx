@@ -95,16 +95,10 @@ export default function ItemCard({
               </ul>
             </div>
             <div className="mb-6">
-              <div className="w-full h-4 bg-gray-700 rounded-full overflow-hidden">
-                <div
-                  className="h-full rounded-full"
-                  style={{
-                    width: `${(id / 100) * 100}%`,
-                    backgroundColor: color,
-                  }}
-                ></div>
-              </div>
-              <p className="text-center mt-2 text-sm">Rarity: {rarity}</p>
+              <p className="text-center font-bold mt-2 text-sm py-2 px-4 w-fit rounded-md" style={{
+                backgroundColor: color,
+                color: "#272727"
+              }}>{rarity}</p>
             </div>
             {variants && (
               <div className="grid grid-cols-2 md:grid-cols-4 mb-4">

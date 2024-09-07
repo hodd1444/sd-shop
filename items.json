@@ -5,9 +5,18 @@
             "name": "Cryo Kinesis Bundle",
             "price": "7,000",
             "image": "/shop_090324/cryo_kinesis_bundle.png",
-            "rarity": "red",
+            "rarity": "Masterpiece",
             "color": "#EA3546",
-            "items": [1]
+            "items": [1,2,3,4,5]
+        },
+        {
+            "id": 2,
+            "name": "Medusa Bundle",
+            "price": "3,400",
+            "image": "/shop_090324/medusa_bundle.png",
+            "rarity": "Prestige",
+            "color": "#EA3546",
+            "items": [6,7,8,9]
         }
     ],
     "items": [
@@ -17,7 +26,7 @@
             "type": "weapon",
             "price": "bundle",
             "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png",
-            "rarity": "red",
+            "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
             "variants": [
@@ -43,6 +52,160 @@
                     "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout_green.png"
                 }
             ]
+        },
+        {
+            "id": 2,
+            "name": "Cryo Kinesis Crusador",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.png",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 1,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Red",
+                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador_red.png"
+                },
+                
+                {
+                    "id": 3,
+                    "name": "Pink",
+                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador_pink.png"
+                },
+                {
+                    "id": 4,
+                    "name": "Green",
+                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador_green.png"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Cryo Kinesis Tempest",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.png",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 1,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Red",
+                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest_red.png"
+                },
+                
+                {
+                    "id": 3,
+                    "name": "Pink",
+                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest_pink.png"
+                },
+                {
+                    "id": 4,
+                    "name": "Green",
+                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest_green.png"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Cryo Kinesis M2 Carbon",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon.png",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 1,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon.png"
+                },
+                {
+                    "id": 2,
+                    "name": "Red",
+                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_red.png"
+                },
+                
+                {
+                    "id": 3,
+                    "name": "Pink",
+                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_pink.png"
+                },
+                {
+                    "id": 4,
+                    "name": "Green",
+                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_green.png"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Cryo Kinesis Melee",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cryo_kinesis/melee/cryo_kinesis_melee.png",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 1,
+            "variants": []
+        },
+        {
+            "id": 6,
+            "name": "Medusa Blackout",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/medusa/medusa_blackout.png",
+            "rarity": "Prestige",
+            "color": "#F9D342",
+            "bundle": 2,
+            "variants": []
+        },
+        {
+            "id": 7,
+            "name": "Medusa M25 Hornet",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/medusa/medusa_m25_hornet.png",
+            "rarity": "Prestige",
+            "color": "#F9D342",
+            "bundle": 2,
+            "variants": []
+        },
+        {
+            "id": 8,
+            "name": "Medusa M17 Bouncer",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/medusa/medusa_m17_bouncer.png",
+            "rarity": "Prestige",
+            "color": "#F9D342",
+            "bundle": 2,
+            "variants": []
+        },
+        {
+            "id": 9,
+            "name": "Medusa Prototype OP",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/medusa/medusa_prototype_op.png",
+            "rarity": "Prestige",
+            "color": "#F9D342",
+            "bundle": 2,
+            "variants": []
         }
     ]
 }

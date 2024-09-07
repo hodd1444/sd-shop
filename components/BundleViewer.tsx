@@ -27,21 +27,18 @@ interface BundleViewerProps {
 }
 
 export default function BundleViewer({ bundle }: BundleViewerProps) {
-    const skins = items.items.filter((skin) => bundle.items.includes(skin.id));
+  const skins = items.items.filter((skin) => bundle.items.includes(skin.id));
   return (
     <div className="bg-[#272727] text-white min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-[#FFCB00] mb-4">
-          {bundle.name}
-        </h1>
         <div className="flex items-center justify-between mb-8">
+          <h1 className="text-4xl font-bold text-[#FFCB00] mb-4">
+            {bundle.name}
+          </h1>
           <p className="text-2xl text-[#EC3C7C] flex items-center">
             <img className="w-8 h-full mr-2" src="/spectre_points_pink.png" />
             {bundle.price}
           </p>
-          <button className="bg-[#FFCB00] text-[#272727] py-2 px-6 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors">
-            Purchase Bundle
-          </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skins.map((skin) => (
@@ -56,29 +53,34 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-4">
-                  <h3 className="text-xl font-semibold text-[#FFCB00] mb-2">
+                  <h3 className="text-xl font-semibold text-[#FFCB00] mb-4">
                     {skin.name}
-                  </h3>{
-                    skin.price === "bundle" ? (
-                      <p className="flex flex-row text-[#EC3C7C] mb-2">
-                        <img className="w-6 h-6 mr-2" src="/spectre_points_pink.png" />Bundle only</p>
-                    ) : (
-                      <p className="flex flex-row text-[#EC3C7C] mb-2">
-                        <img className="w-6 h-6 mr-2" src="/spectre_points_pink.png" />
-                        {skin.price}
-                      </p>
-                    )
-                  }
-                  <p className="text-sm">Rarity: {skin.rarity}</p>
-                  <div className="mt-2 w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                    <div
-                      className="h-full rounded-full"
-                      style={{
-                        width: `${(skin.id / 100) * 100}%`,
-                        backgroundColor: skin.color,
-                      }}
-                    ></div>
-                  </div>
+                  </h3>
+                  {skin.price === "bundle" ? (
+                    <p className="flex flex-row text-[#bdbdbd] mb-2">
+                      <img
+                        className="w-6 h-6 mr-2"
+                        src="/spectre_points_gray.png"
+                      />
+                      Bundle only
+                    </p>
+                  ) : (
+                    <p className="flex flex-row text-[#EC3C7C] mb-2">
+                      <img
+                        className="w-6 h-6 mr-2"
+                        src="/spectre_points_pink.png"
+                      />
+                      {skin.price}
+                    </p>
+                  )}
+                  <p
+                    className="text-sm font-bold text-gray-800 rounded-md w-fit px-2 py-1"
+                    style={{
+                      backgroundColor: skin.color,
+                    }}
+                  >
+                    {skin.rarity}
+                  </p>
                 </div>
               </div>
             </Link>
