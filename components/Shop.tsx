@@ -383,7 +383,8 @@ export default function Shop() {
           {shopAvailable && (
             <>
               <p>Items displayed are available in-game. Prices may change.</p>
-              <p>
+              <p>This site is not affiliated with Mountaintop Studios and all associated properties <br></br> “Spectre Divide” are trademarks or registered trademarks of Mountaintop Studios.</p>
+              <p className="mt-4">
                 Want to calculate prices? Head over to the{" "}
                 <a
                   target="_blank"

@@ -5,6 +5,7 @@ import itemList from "@/items.json";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import ItemCard from "@/components/ItemCard";
+import { ToastContainer } from "react-toastify";
 
 export default function ItemPage() {
   const itemName = usePathname()

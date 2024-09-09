@@ -3,6 +3,7 @@ import { Coins } from "lucide-react";
 import items from "@/items.json";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface ItemCardProps {
   id: number;
@@ -31,6 +32,44 @@ export default function ItemCard({
     setSelectedVariant(image);
   };
 
+  const handleAddToOwned = () => {
+    /* toast.success(`${name} added to owned!`,  {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    }); */
+    toast.dark(`This feature is currently in development!`,   {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        backgroundColor: "#272727",
+        color: "#FFCB00",
+      },
+    });
+  };
+
+  const handleAddToWishlist = () => {
+    toast.dark(`This feature is currently in development!`,   {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        backgroundColor: "#272727",
+        color: "#FFCB00",
+      },
+    });
+  };
+
   return (
     <div className="bg-[#272727] text-white">
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
@@ -46,7 +85,7 @@ export default function ItemCard({
               <img
                 src={selectedVariant}
                 alt={name}
-                className="w-full object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -117,10 +156,10 @@ export default function ItemCard({
             )}
 
             <div className="flex flex-row justify-between gap-8 p-4">
-              <button className="w-full bg-[#FFCB00] text-[#272727] py-2 px-4 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors">
+              <button className="w-full bg-[#FFCB00] text-[#272727] py-2 px-4 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors" onClick={handleAddToOwned}>
                 Add to Owned
               </button>
-              <button className="w-full bg-[#FFCB00] text-[#272727] py-2 px-4 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors">
+              <button className="w-full bg-[#FFCB00] text-[#272727] py-2 px-4 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors" onClick={handleAddToWishlist}>
                 Add to Wishlist
               </button>
             </div>
