@@ -119,17 +119,11 @@ export default function ItemCard({
                 </li>
                 <li className="flex justify-between">
                   <span>Rarity:</span>
-                  <span className="text-[#FFCB00]">{rarity}</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Color:</span>
-                  <span className="text-[#FFCB00]" style={{ color: color }}>
-                    {color}
-                  </span>
+                  <span style={{color: color}}>{rarity}</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Bundle:</span>
-                  <span className="text-[#FFCB00]">{bundle}</span>
+                  <span className="text-[#FFCB00]">{items.bundles.find((b) => b.id === bundle)?.name}</span>
                 </li>
               </ul>
             </div>
