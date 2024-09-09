@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Shop | Spectre",
-  description: "The daily shop in Spectre Divide.",
+  description: "View the Spectre Divide Shop and it's contents",
 };
 
 export default function RootLayout({
