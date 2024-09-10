@@ -382,7 +382,7 @@ export default function Shop() {
           {spotlight.map((item, index) => (
             <div
               key={item.id}
-              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 2 ? "col-span-2" : "col-span-1"
+              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 2 ? "sm:col-span-2" : "sm:col-span-1"
                 }`}
             >
               <img
@@ -420,7 +420,7 @@ export default function Shop() {
           {offers1.map((item, index) => (
             <div
               key={item.id}
-              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index === 0 ? "col-span-2" : "col-span-1"
+              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index === 0 ? "sm:col-span-2" : "sm:col-span-1"
                 }`}
             >
               <img
