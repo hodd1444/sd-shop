@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Cryo Kinesis Bundle",
             "price": "7,000",
-            "image": "/shop_090324/cryo_kinesis_bundle.png",
+            "image": "/shop_090324/cryo_kinesis_bundle.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "items": [1,2,3,4,5]
@@ -13,7 +13,7 @@
             "id": 2,
             "name": "Medusa Bundle",
             "price": "3,400",
-            "image": "/shop_090324/medusa_bundle.png",
+            "image": "/shop_090324/medusa_bundle.webp",
             "rarity": "Prestige",
             "color": "#EA3546",
             "items": [6,7,8,9]
