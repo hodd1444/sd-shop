@@ -17,6 +17,15 @@
             "rarity": "Prestige",
             "color": "#EA3546",
             "items": [6,7,8,9]
+        },
+        {
+            "id": 3,
+            "name": "Wasabi Bundle",
+            "price": "2,600",
+            "image": "/shop_091024/wasabi_bundle/wasabi_bundle.png",
+            "rarity": "Elite",
+            "color": "#F9D342",
+            "items": []
         }
     ],
     "items": [
