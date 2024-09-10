@@ -1,1 +1,1 @@
-# Live demo: https://spectre-shop.hodd.xyz
+# Live demo: https://spectre-divide.shop
