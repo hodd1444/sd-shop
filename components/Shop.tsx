@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Clock, Coins, Rocket, Github } from "lucide-react";
-import Link from "next/link"
+import { BundleBannerCard } from "./BundleBannerCard";
 
 const bundles = [
   {
@@ -9,6 +9,32 @@ const bundles = [
     name: "Cryo Kinesis Bundle",
     price: "7,000",
     image: "/shop_090324/cryo_kinesis_bundle.webp",
+    imageSet: [
+      {
+        id: 0,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/BG.webp",
+      },
+      {
+        id: 1,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/1.webp",
+      },
+      {
+        id: 2,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/2.webp",
+      },
+      {
+        id: 3,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/3.webp",
+      },
+      {
+        id: 4,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/4.webp",
+      },
+      {
+        id: 5,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/5.webp",
+      },
+    ],
     rarity: "red",
     color: "#EA3546",
   },
@@ -17,6 +43,7 @@ const bundles = [
     name: "Medusa Bundle",
     price: "3,400",
     image: "/shop_090324/medusa_bundle.webp",
+    imageSet: [], // null, bundle.image rendered as a fallback
     rarity: "orange",
     color: "#F9B428",
   },
@@ -168,7 +195,7 @@ export default function Shop() {
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
@@ -177,7 +204,7 @@ export default function Shop() {
           .toString()
           .padStart(2, "0")} HOURS ${minutes
           .toString()
-          .padStart(2, "0")} MINUTES`
+          .padStart(2, "0")} MINUTES`,
       );
     };
 
@@ -198,7 +225,7 @@ export default function Shop() {
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
@@ -207,7 +234,7 @@ export default function Shop() {
           .toString()
           .padStart(2, "0")} HOURS ${minutes
           .toString()
-          .padStart(2, "0")} MINUTES`
+          .padStart(2, "0")} MINUTES`,
       );
     };
 
@@ -226,38 +253,7 @@ export default function Shop() {
         </div>
 
         <div className="flex flex-col justify-between gap-8">
-          {bundles.map((item) => (
-            <Link
-              href={`/bundle/${item.name
-                .toLowerCase()
-                .split(" ")
-                .join("-")}`}
-              className="hover:cursor-default"
-              key={item.id}
-            >
-              <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-3/4 object-cover"
-                />
-                <div className="flex flex-row justify-between align-middle items-center p-4">
-                  <h3
-                    className={`text-lg font-semibold`}
-                    style={{
-                      color: item.color,
-                    }}
-                  >
-                    {item.name}
-                  </h3>
-                  <div className="flex items-center text-[#bdbdbd]">
-                    <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
-                    <span>{item.price}</span>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          ))}
+          <BundleBannerCard bundles={bundles} />
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
@@ -286,7 +282,10 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -314,7 +313,10 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -342,7 +344,10 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -370,7 +375,10 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -382,7 +390,11 @@ export default function Shop() {
           {shopAvailable && (
             <>
               <p>Items displayed are available in-game. Prices may change.</p>
-              <p>This site is not affiliated with Mountaintop Studios and all associated properties <br></br> “Spectre Divide” are trademarks or registered trademarks of Mountaintop Studios.</p>
+              <p>
+                This site is not affiliated with Mountaintop Studios and all
+                associated properties <br></br> “Spectre Divide” are trademarks
+                or registered trademarks of Mountaintop Studios.
+              </p>
               <p className="mt-4">
                 Want to calculate prices? Head over to the{" "}
                 <a

@@ -1,0 +1,1 @@
+export { getRelativeCoordinates } from "./getRelativeCoordinates";
