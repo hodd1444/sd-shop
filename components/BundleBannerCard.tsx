@@ -4,7 +4,7 @@ import { getRelativeCoordinates } from "@/lib";
 import { CryoKinesisBanner } from "@/components/Banners";
 
 export const BundleBannerCard = ({ bundles }: any) => {
-  return bundles.map((item) => (
+  return bundles.map((item: any) => (
     <Link
       href={`/bundle/${item.name.toLowerCase().split(" ").join("-")}`}
       className="hover:cursor-default"

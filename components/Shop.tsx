@@ -34,6 +34,10 @@ const bundles = [
         id: 5,
         src: "/shop_090324/cryo_kinesis_bundle_splashart/5.webp",
       },
+      {
+        id: 6,
+        src: "/shop_090324/cryo_kinesis_bundle_splashart/6.webp",
+      },
     ],
     rarity: "red",
     color: "#EA3546",

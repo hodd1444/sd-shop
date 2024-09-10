@@ -1,4 +1,9 @@
-export function getRelativeCoordinates(event, referenceElement) {
+export type Position = {
+  x: number;
+  y: number;
+};
+
+export function getRelativeCoordinates(event: any, referenceElement: any) {
   const position = {
     x: event.pageX,
     y: event.pageY,
