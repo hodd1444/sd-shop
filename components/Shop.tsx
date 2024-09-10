@@ -3,7 +3,19 @@ import { useState, useEffect } from "react";
 import { Clock, Coins, Rocket, Github } from "lucide-react";
 import { BundleBannerCard } from "./BundleBannerCard";
 
-const bundles = [
+const bundles1 = [
+  {
+    id: 1,
+    name: "Wasabi Bundle",
+    price: "2,600",
+    image: "/shop_091024/wasabi_bundle/wasabi_bundle.png",
+    imageSet: [], // null, bundle.image rendered as a fallback
+    rarity: "purple",
+    color: "#B661FF",
+  }
+]
+
+const bundles2 = [
   {
     id: 1,
     name: "Cryo Kinesis Bundle",
@@ -52,6 +64,33 @@ const bundles = [
     color: "#F9B428",
   },
 ];
+
+const spotlight = [
+  {
+    id: 1,
+    name: "Hellion Bundle",
+    price: "2,000",
+    image: "/shop_091024/spotlight/hellion_bundle.png",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 2,
+    name: "Inclement Weather Bundle",
+    price: "1,000",
+    image: "/shop_091024/spotlight/inclement_weather_bundle.png",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 3,
+    name: "Honor In Battle",
+    price: "1,500",
+    image: "/shop_091024/spotlight/honor_in_battle.png",
+    rarity: "red",
+    color: "#EA3546",
+  },
+]
 
 const offers1 = [
   {
@@ -188,6 +227,8 @@ const offers4 = [
 export default function Shop() {
   const [offerTimeLeft, setShopTimeLeft] = useState("23:59:59");
   const [featuredTimeLeft, setFeaturedTimeLeft] = useState("23:59:59");
+  const [featured2TimeLeft, setFeatured2TimeLeft] = useState("23:59:59");
+  const [spotlightTimeLeft, setSpotlightTimeLeft] = useState("23:59:59");
 
   const shopAvailable = true;
   useEffect(() => {
@@ -207,8 +248,8 @@ export default function Shop() {
         `${days.toString()} DAYS ${hours
           .toString()
           .padStart(2, "0")} HOURS ${minutes
-          .toString()
-          .padStart(2, "0")} MINUTES`,
+            .toString()
+            .padStart(2, "0")} MINUTES`,
       );
     };
 
@@ -218,8 +259,9 @@ export default function Shop() {
     return () => clearInterval(countdownInterval);
   }, []);
 
+  // Featured 1
   useEffect(() => {
-    const shopResetDate = new Date(Date.UTC(2024, 8, 10, 20, 0, 0, 0)); // October is month 9 (0-indexed)
+    const shopResetDate = new Date(Date.UTC(2024, 8, 17, 20, 0, 0, 0));
 
     console.log(shopResetDate);
 
@@ -237,8 +279,8 @@ export default function Shop() {
         `${days.toString()} DAYS ${hours
           .toString()
           .padStart(2, "0")} HOURS ${minutes
-          .toString()
-          .padStart(2, "0")} MINUTES`,
+            .toString()
+            .padStart(2, "0")} MINUTES`,
       );
     };
 
@@ -248,16 +290,125 @@ export default function Shop() {
     return () => clearInterval(countdownInterval);
   }, []);
 
+  // Featured 2
+  useEffect(() => {
+    const featured2ResetDate = new Date(Date.UTC(2024, 8, 24, 20, 0, 0, 0));
+
+    console.log(featured2ResetDate);
+
+    const updateCountdownFeatured2 = () => {
+      const now = new Date();
+      const timeDiff = featured2ResetDate.getTime() - now.getTime();
+
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+      setFeatured2TimeLeft(
+        `${days.toString()} DAYS ${hours
+          .toString()
+          .padStart(2, "0")} HOURS ${minutes
+            .toString()
+            .padStart(2, "0")} MINUTES`,
+      );
+    };
+
+
+    updateCountdownFeatured2();
+    const countdownInterval = setInterval(updateCountdownFeatured2, 60000);
+
+    return () => clearInterval(countdownInterval);
+  }, []);
+
+  // Spotlight Time Counter
+  useEffect(() => {
+    const spotlightResetDate = new Date(Date.UTC(2024, 9, 8, 20, 0, 0, 0));
+
+    console.log(spotlightResetDate);
+
+    const updateCountdownSpotlight = () => {
+      const now = new Date();
+      const timeDiff = spotlightResetDate.getTime() - now.getTime();
+
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+      setSpotlightTimeLeft(
+        `${days.toString()} DAYS ${hours
+          .toString()
+          .padStart(2, "0")} HOURS ${minutes
+            .toString()
+            .padStart(2, "0")} MINUTES`,
+      );
+    };
+
+    updateCountdownSpotlight();
+    const countdownInterval = setInterval(updateCountdownSpotlight, 60000);
+
+    return () => clearInterval(countdownInterval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#272727] text-white p-8 flex flex-col items-center justify-center">
       <div className="max-w-5xl w-full">
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">FEATURED</h2>
+          <p className="text-gray-400">{featured2TimeLeft}</p>
+        </div>
+
+        <div className="flex flex-col justify-between gap-8">
+          <BundleBannerCard bundles={bundles1} />
+        </div>
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">FEATURED</h2>
           <p className="text-gray-400">{featuredTimeLeft}</p>
         </div>
 
         <div className="flex flex-col justify-between gap-8">
-          <BundleBannerCard bundles={bundles} />
+          <BundleBannerCard bundles={bundles2} />
+        </div>
+
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">SPOTLIGHT</h2>
+          <p className="text-gray-400">{spotlightTimeLeft}</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {spotlight.map((item, index) => (
+            <div
+              key={item.id}
+              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 2 ? "col-span-2" : "col-span-1"
+                }`}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-3/4 object-cover"
+              />
+              <div className="flex flex-col justify-between p-4">
+                <h3
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
+                  }}
+                >
+                  {item.name}
+                </h3>
+                <div className="flex items-center text-[#bdbdbd]">
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
+                  <span>{item.price}</span>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
@@ -265,11 +416,12 @@ export default function Shop() {
           <p className="text-gray-400">{offerTimeLeft}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {offers1.map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {offers1.map((item, index) => (
             <div
               key={item.id}
-              className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
+              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index === 0 ? "col-span-2" : "col-span-1"
+                }`}
             >
               <img
                 src={item.image}
