@@ -419,7 +419,7 @@ export default function Shop() {
             >
               <Github className="w-5 h-5 mr-4 hover:text-[#FFCB00]" />
             </a>
-            <p>Made with ❤️ by @hodd</p>
+            <p>Made with ❤️ by @hodd and @kotsu</p>
           </div>
         </footer>
       </div>
