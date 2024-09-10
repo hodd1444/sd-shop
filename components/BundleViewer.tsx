@@ -36,7 +36,7 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
             {bundle.name}
           </h1>
           <p className="text-2xl text-[#EC3C7C] flex items-center">
-            <img className="w-8 h-full mr-2" src="/spectre_points_pink.png" />
+            <img className="w-8 h-full mr-2" src="/spectre_points_pink.webp" />
             {bundle.price}
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
                     <p className="flex flex-row text-[#bdbdbd] mb-2">
                       <img
                         className="w-6 h-6 mr-2"
-                        src="/spectre_points_gray.png"
+                        src="/spectre_points_gray.webp"
                       />
                       Bundle only
                     </p>
@@ -68,7 +68,7 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
                     <p className="flex flex-row text-[#EC3C7C] mb-2">
                       <img
                         className="w-6 h-6 mr-2"
-                        src="/spectre_points_pink.png"
+                        src="/spectre_points_pink.webp"
                       />
                       {skin.price}
                     </p>

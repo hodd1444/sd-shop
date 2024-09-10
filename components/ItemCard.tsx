@@ -92,7 +92,7 @@ export default function ItemCard({
           <div className="bg-[#333333] rounded-lg p-6 shadow-lg">
             {price === "bundle" && (
               <p className="text-2xl text-[#EC3C7C] mb-4 flex flex-wrap items-center">
-                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.png`} />
+                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.webp`} />
                 Only available in{" "}
                 <Link
                   className={`ml-4 hover:text-[#FFCB00] transition-all`}
@@ -104,7 +104,7 @@ export default function ItemCard({
             )}
             {price !== "bundle" && (
               <p className="text-2xl text-[#EC3C7C] mb-4 flex items-center">
-                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.png`} />
+                <img className="w-8 h-full mr-2" src={`/spectre_points_pink.webp`} />
                 {price}
               </p>
             )}

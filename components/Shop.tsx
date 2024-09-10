@@ -1,15 +1,14 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Clock, Coins, Rocket, Github } from "lucide-react";
-import Link from "next/link";
-import { styleText } from "util";
+import Link from "next/link"
 
 const bundles = [
   {
     id: 1,
     name: "Cryo Kinesis Bundle",
     price: "7,000",
-    image: "/shop_090324/cryo_kinesis_bundle.png",
+    image: "/shop_090324/cryo_kinesis_bundle.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -17,7 +16,7 @@ const bundles = [
     id: 2,
     name: "Medusa Bundle",
     price: "3,400",
-    image: "/shop_090324/medusa_bundle.png",
+    image: "/shop_090324/medusa_bundle.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -28,7 +27,7 @@ const offers1 = [
     id: 1,
     name: "Starter Pack",
     price: "500",
-    image: "/shop_090324/starter_pack.png",
+    image: "/shop_090324/starter_pack.webp",
     rarity: "common",
     color: "#ffffff",
   },
@@ -36,7 +35,7 @@ const offers1 = [
     id: 2,
     name: "Outrider",
     price: "1,500",
-    image: "/shop_090324/outrider.png",
+    image: "/shop_090324/outrider.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -44,7 +43,7 @@ const offers1 = [
     id: 3,
     name: "Prince",
     price: "1,500",
-    image: "/shop_090324/prince.png",
+    image: "/shop_090324/prince.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -52,7 +51,7 @@ const offers1 = [
     id: 4,
     name: "Eternal Warrior M49 Fury",
     price: "1,200",
-    image: "/shop_090324/eternal_warrior_m49_fury.png",
+    image: "/shop_090324/eternal_warrior_m49_fury.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -63,7 +62,7 @@ const offers2 = [
     id: 1,
     name: "Mako Buzzsaw RT40",
     price: "800",
-    image: "/shop_090324/mako_buzzsaw_rt40.png",
+    image: "/shop_090324/mako_buzzsaw_rt40.webp",
     rarity: "purple",
     color: "#B661FF",
   },
@@ -71,7 +70,7 @@ const offers2 = [
     id: 2,
     name: "Mako Harpe",
     price: "800",
-    image: "/shop_090324/mako_harpe.png",
+    image: "/shop_090324/mako_harpe.webp",
     rarity: "purple",
     color: "#B661FF",
   },
@@ -79,7 +78,7 @@ const offers2 = [
     id: 3,
     name: "Eternal Warrior Duster RX6",
     price: "1,200",
-    image: "/shop_090324/eternal_warrior_duster_rx6.png",
+    image: "/shop_090324/eternal_warrior_duster_rx6.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -87,7 +86,7 @@ const offers2 = [
     id: 4,
     name: "Elegant Operative",
     price: "1,500",
-    image: "/shop_090324/elegant_operative.png",
+    image: "/shop_090324/elegant_operative.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -95,7 +94,7 @@ const offers2 = [
     id: 5,
     name: "High Performance",
     price: "1,500",
-    image: "/shop_090324/high_performance.png",
+    image: "/shop_090324/high_performance.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -106,7 +105,7 @@ const offers3 = [
     id: 1,
     name: "04",
     price: "1,000",
-    image: "/shop_090324/04.png",
+    image: "/shop_090324/04.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -114,7 +113,7 @@ const offers3 = [
     id: 2,
     name: "Starbright",
     price: "1,000",
-    image: "/shop_090324/starbright.png",
+    image: "/shop_090324/starbright.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -122,7 +121,7 @@ const offers3 = [
     id: 3,
     name: "Primal",
     price: "1,500",
-    image: "/shop_090324/primal.png",
+    image: "/shop_090324/primal.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -130,7 +129,7 @@ const offers3 = [
     id: 4,
     name: "Popstar",
     price: "1,500",
-    image: "/shop_090324/popstar.png",
+    image: "/shop_090324/popstar.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -141,7 +140,7 @@ const offers4 = [
     id: 1,
     name: "Beast",
     price: "1,000",
-    image: "/shop_090324/beast.png",
+    image: "/shop_090324/beast.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -149,7 +148,7 @@ const offers4 = [
     id: 2,
     name: "Bloomtech Outfitters",
     price: "1,000",
-    image: "/shop_090324/bloomtech_outfitters.png",
+    image: "/shop_090324/bloomtech_outfitters.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -252,7 +251,7 @@ export default function Shop() {
                     {item.name}
                   </h3>
                   <div className="flex items-center text-[#bdbdbd]">
-                    <img src="/spectre_points_gray.png" className="w-5 h-5 mr-1" />
+                    <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
                     <span>{item.price}</span>
                   </div>
                 </div>
@@ -287,7 +286,7 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.png" className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -315,7 +314,7 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.png" className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -343,7 +342,7 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.png" className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
@@ -371,7 +370,7 @@ export default function Shop() {
                   {item.name}
                 </h3>
                 <div className="flex items-center text-[#bdbdbd]">
-                  <img src="/spectre_points_gray.png" className="w-5 h-5 mr-1" />
+                  <img src="/spectre_points_gray.webp" className="w-5 h-5 mr-1" />
                   <span>{item.price}</span>
                 </div>
               </div>
