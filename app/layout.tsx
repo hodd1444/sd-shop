@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shop | Spectre",
     description: "View the Spectre Divide Shop and it's contents",
-    image: "/opengraph-image.png",
+    images: "/opengraph-image.png",
   },
   twitter: {
     card: "summary_large_image",
     site: "",
     title: "Shop | Spectre",
     description: "View the Spectre Divide Shop and it's contents",
-    image: "/twitter-image.png",
+    images: "/twitter-image.png",
   },
 };
 
