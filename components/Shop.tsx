@@ -9,7 +9,35 @@ const bundles1 = [
     name: "Wasabi Bundle",
     price: "2,600",
     image: "/shop_091024/wasabi_bundle/wasabi_bundle.png",
-    imageSet: [], // null, bundle.image rendered as a fallback
+    imageSet: [
+      {
+        id: 0,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/BG.webp",
+      },
+      {
+        id: 1,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/1.webp",
+      },
+      {
+        id: 2,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/2.webp",
+      },
+      {
+        id: 3,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/3.webp",
+      },
+      {
+        id: 4,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/4.webp",
+      },
+      {
+        id: 5,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/5.webp",
+      },
+      {
+        id: 6,
+        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/6.webp",
+      },], // null, bundle.image rendered as a fallback
     rarity: "purple",
     color: "#B661FF",
   }

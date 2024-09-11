@@ -102,7 +102,7 @@ export const CryoKinesisBanner = ({ bundle }: CryoKinesisBannerProps) => {
         <motion.img
           src={bundle.imageSet[6].src}
           alt={bundle.name + " 6"}
-          className="no-select w-[32%] z-50 h-auto object-cover absolute bottom-0 left-0"
+          className="no-select w-[27%] z-50 h-auto object-cover absolute bottom-0 left-0"
           initial={{ opacity: 0, top: "6%", left: "6%" }}
           animate={{
             opacity: 1,

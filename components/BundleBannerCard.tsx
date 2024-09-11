@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CryoKinesisBanner, MedusaBanner } from "@/components/Banners";
+import { CryoKinesisBanner, MedusaBanner, WasabiBanner } from "@/components/Banners";
 
 export const BundleBannerCard = ({ bundles }: any) => {
   console.log(bundles);
@@ -19,10 +19,16 @@ export const BundleBannerCard = ({ bundles }: any) => {
         ) : (
           <>
 
-            {item.id === 1 ? (
+            {item.name === "Cryo Kinesis Bundle" ? (
               <CryoKinesisBanner bundle={bundles[item.id-1]} />
             ) : (
-              <MedusaBanner bundle={bundles[item.id-1]} />
+              <>
+                {item.name === "Medusa Bundle" ? (
+                  <MedusaBanner bundle={bundles[item.id-1]} />
+                ) : (
+                  <WasabiBanner bundle={bundles[item.id-1]} />
+                )}
+              </>
             )}
           </>
         )}
