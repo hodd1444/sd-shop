@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { useRef, useState } from "react";
-import { getRelativeCoordinates } from "@/lib";
-import { CryoKinesisBanner } from "@/components/Banners";
+import { CryoKinesisBanner, MedusaBanner } from "@/components/Banners";
 
 export const BundleBannerCard = ({ bundles }: any) => {
+  console.log(bundles);
   return bundles.map((item: any) => (
     <Link
       href={`/bundle/${item.name.toLowerCase().split(" ").join("-")}`}
@@ -18,7 +17,14 @@ export const BundleBannerCard = ({ bundles }: any) => {
             className="w-full h-3/4 object-cover"
           />
         ) : (
-          <CryoKinesisBanner bundle={bundles[0]} />
+          <>
+
+            {item.id === 1 ? (
+              <CryoKinesisBanner bundle={bundles[item.id-1]} />
+            ) : (
+              <MedusaBanner bundle={bundles[item.id-1]} />
+            )}
+          </>
         )}
 
         <div className="flex flex-row justify-between align-middle items-center p-4 z-20 relative bg-[#333333]">

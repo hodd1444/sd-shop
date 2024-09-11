@@ -59,7 +59,32 @@ const bundles2 = [
     name: "Medusa Bundle",
     price: "3,400",
     image: "/shop_090324/medusa_bundle.webp",
-    imageSet: [], // null, bundle.image rendered as a fallback
+    imageSet: [
+      {
+        id: 0,
+        src: "/shop_090324/medusa_bundle_splashart/BG.webp",
+      },
+      {
+        id: 1,
+        src: "/shop_090324/medusa_bundle_splashart/1.webp",
+      },
+      {
+        id: 2,
+        src: "/shop_090324/medusa_bundle_splashart/2.webp",
+      },
+      {
+        id: 3,
+        src: "/shop_090324/medusa_bundle_splashart/3.webp",
+      },
+      {
+        id: 4,
+        src: "/shop_090324/medusa_bundle_splashart/4.webp",
+      },
+      {
+        id: 5,
+        src: "/shop_090324/medusa_bundle_splashart/5.webp",
+      },
+    ],
     rarity: "orange",
     color: "#F9B428",
   },
