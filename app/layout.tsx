@@ -7,11 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NODE_ENV === "development"
-      ? `http://localhost:${process.env.PORT || 3000}`
-      : `https://${process.env.VERCEL_URL}`,
-  ),
+  metadataBase: new URL("https://spectre-divide.shop"),
   // TODO: move to site config
   title: "Shop | Spectre",
   description: "View the Spectre Divide Shop and it's contents",
