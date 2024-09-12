@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShoppingCart, Menu, X } from "lucide-react";
+import { ShoppingCart, Menu, X, List } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
@@ -25,6 +25,13 @@ export default function Header() {
             >
                 <ShoppingCart className="h-6 w-6 text-[#FFCB00] group-hover:text-[#EC3C7C]" />
               Shop
+            </Link>
+            <Link
+              href="/list"
+              className="flex flex-row justify-between gap-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors group"
+            >
+                <List className="h-6 w-6 text-[#FFCB00] group-hover:text-[#EC3C7C]" />
+              List
             </Link>
             {/*
             <Link

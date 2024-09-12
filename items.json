@@ -4,7 +4,7 @@
             "id": 1,
             "name": "Cryo Kinesis Bundle",
             "price": "7,000",
-            "image": "/shop_090324/cryo_kinesis_bundle.webp",
+            "image": "/vault/weapons/cryo_kinesis/cryo_kinesis_bundle.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "items": [1,2,3,4,5]
@@ -13,16 +13,16 @@
             "id": 2,
             "name": "Medusa Bundle",
             "price": "3,400",
-            "image": "/shop_090324/medusa_bundle.webp",
+            "image": "/vault/weapons/medusa/medusa_bundle.webp",
             "rarity": "Prestige",
-            "color": "#EA3546",
+            "color": "#F9B428",
             "items": [6,7,8,9]
         },
         {
             "id": 3,
             "name": "Wasabi Bundle",
             "price": "2,600",
-            "image": "/shop_091024/wasabi_bundle/wasabi_bundle.png",
+            "image": "/vault/weapons/wasabi/wasabi_bundle.webp",
             "rarity": "Elite",
             "color": "#F9D342",
             "items": []
@@ -214,6 +214,39 @@
             "rarity": "Prestige",
             "color": "#F9D342",
             "bundle": 2,
+            "variants": []
+        },
+        {
+            "id": 10,
+            "name": "Wasabi M2 Carbon",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/wasabi/wasabi_m2_carbon.png",
+            "rarity": "Elite",
+            "color": "#B661FF",
+            "bundle": 3,
+            "variants": []
+        }, 
+        {
+            "id": 11,
+            "name": "Wasabi Harpe",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/wasabi/wasabi_harpe.png",
+            "rarity": "Elite",
+            "color": "#B661FF",
+            "bundle": 3,
+            "variants": []
+        },
+        {
+            "id": 12,
+            "name": "Wasabi Melee",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/wasabi/wasabi_melee.png",
+            "rarity": "Elite",
+            "color": "#B661FF",
+            "bundle": 3,
             "variants": []
         }
     ]

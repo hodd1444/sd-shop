@@ -8,7 +8,7 @@ const bundles1 = [
     id: 1,
     name: "Wasabi Bundle",
     price: "2,600",
-    image: "/shop_091024/wasabi_bundle/wasabi_bundle.png",
+    image: "/shop_091024/wasabi_bundle/wasabi_bundle.webp",
     imageSet: [
       {
         id: 0,
