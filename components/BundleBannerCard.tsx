@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { CryoKinesisBanner, MedusaBanner, WasabiBanner } from "@/components/Banners";
+import {
+  CryoKinesisBanner,
+  MedusaBanner,
+  WasabiBanner,
+} from "@/components/Banners";
 
 export const BundleBannerCard = ({ bundles }: any) => {
-  console.log(bundles);
   return bundles.map((item: any) => (
     <Link
       href={`/bundle/${item.name.toLowerCase().split(" ").join("-")}`}
@@ -18,15 +21,14 @@ export const BundleBannerCard = ({ bundles }: any) => {
           />
         ) : (
           <>
-
             {item.name === "Cryo Kinesis Bundle" ? (
-              <CryoKinesisBanner bundle={bundles[item.id-1]} />
+              <CryoKinesisBanner bundle={bundles[item.id - 1]} />
             ) : (
               <>
                 {item.name === "Medusa Bundle" ? (
-                  <MedusaBanner bundle={bundles[item.id-1]} />
+                  <MedusaBanner bundle={bundles[item.id - 1]} />
                 ) : (
-                  <WasabiBanner bundle={bundles[item.id-1]} />
+                  <WasabiBanner bundle={bundles[item.id - 1]} />
                 )}
               </>
             )}
