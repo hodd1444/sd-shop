@@ -1,8 +1,9 @@
 'use client';
 import React, { useEffect, useState } from "react";
-import { DollarSign } from "lucide-react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGun, faFire, faBars, faRunning } from "@fortawesome/free-solid-svg-icons";
+import { faGun, faLayerGroup, faBan, faDollarSign, faChevronDown, faSort, faList, faSortAlphaDown, faSortAlphaDownAlt, faSortNumericDown, faSortNumericDownAlt } from "@fortawesome/free-solid-svg-icons";
+import WeaponCard from "./WeaponCard";
 
 interface Weapon {
   name: string;
@@ -37,126 +38,13 @@ interface Weapon {
   };
 }
 
-const Weapons: Weapon[] = [
-  {
-    name: 'M2 Carbon',
-    description: 'Standard-issue semi-automatic pistol.\nReliable and easy to use.\n\nPenetration: Mid',
-    type: 'Sidearm',
-    price: 0,
-    bundleId: [1],
-    image: '/vault/weapons/default/m2_carbon.png',
-    stats: {
-      runSpeed: 5.04,
-      magazine: 12,
-      fireRate: 352,
-      reloadTime: 1.8,
-      hipfireRange: '13.0M',
-      damage: {
-        midRange: {
-          head: 74,
-          body: 22,
-          legs: 22,
-        },
-        longRange: {
-          head: 66,
-          body: 22,
-          legs: 18,
-        },
-      }
-    }
-  },
-  {
-    name: 'M10 Brat',
-    description: 'Fires a rapid barrage of bullets. SMall magazine so watch your ammo count.\n\nPenetration: Mid',
-    type: 'Sidearm',
-    price: 400,
-    bundleId: [2],
-    image: '/vault/weapons/default/m10_brat.png',
-    stats: {
-      runSpeed: 5.04,
-      magazine: 12,
-      fireRate: 900,
-      reloadTime: 2.3,
-      hipfireRange: '15.0M',
-      damage: {
-        midRange: {
-          head: 49,
-          body: 21,
-          legs: 19,
-        },
-        longRange: {
-          head: 34,
-          body: 19,
-          legs: 18,
-        },
-      }
-    }
-  },
-  {
-    name: 'Shiv',
-    description: 'Low caliber supressed pistol.\nTracers are invisible to enemies.\nIncreased movement speed\n\nPenetration: Mid',
-    type: 'Sidearm',
-    price: 400,
-    bundleId: [2, 3],
-    image: '/vault/weapons/default/shiv.png',
-    stats: {
-      runSpeed: 5.35,
-      magazine: 12,
-      fireRate: 405,
-      reloadTime: 1.7,
-      hipfireRange: '18.0M',
-      damage: {
-        closeRange: {
-          head: 100,
-          body: 33,
-          legs: 26,
-        },
-        midRange: {
-          head: 74,
-          body: 26,
-          legs: 22,
-        },
-        longRange: {
-          head: 66,
-          body: 22,
-          legs: 19,
-        }
-      }
-    }
-  },
-  {
-    name: 'Duster RX6',
-    description: 'High risk, high reward. Low rate of fire, so make your shots count.\n\nPenetration: Mid',
-    type: 'Sidearm',
-    price: 800,
-    bundleId: [3],
-    image: '/vault/weapons/default/duster_rx6.png',
-    stats: {
-      runSpeed: 5.04,
-      magazine: 6,
-      fireRate: 150,
-      reloadTime: 2.3,
-      hipfireRange: '13.0M',
-      damage: {
-        midRange: {
-          head: 160,
-          body: 55,
-          legs: 47,
-        },
-        longRange: {
-          head: 145,
-          body: 50,
-          legs: 43,
-        }
-      }
-    }
-  }
-];
+const Weapons: Weapon[] = require('@/weapons.json');
 
 export default function WeaponList() {
   const [filter, setFilter] = useState<string>('');
   const [filteredWeapons, setFilteredWeapons] = useState<Weapon[]>(Weapons);
   const [group, setGroup] = useState<string>('');
+  const [sortOrder, setSortOrder] = useState<string>('default');
 
   // Group weapons by type
   const weaponsByType = Weapons.reduce((acc, weapon) => {
@@ -167,67 +55,116 @@ export default function WeaponList() {
     return acc;
   }, {} as Record<string, Weapon[]>);
 
+  useEffect(() => {
+    let sorted = [...Weapons];
+    switch (sortOrder) {
+      case 'name-asc':
+        sorted.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case 'name-desc':
+        sorted.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case 'price-asc':
+        sorted.sort((a, b) => a.price - b.price);
+        break;
+      case 'price-desc':
+        sorted.sort((a, b) => b.price - a.price);
+        break;
+      // 'default' case will use the original order, so no sorting needed
+    }
+    setFilteredWeapons(sorted);
+  }, [sortOrder]);
+
   return (
     <div className="bg-[#272727] text-white min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-[#FFCB00] mb-8"><FontAwesomeIcon icon={faGun} className="mr-2" /> Weapons</h1>
-        {Object.entries(weaponsByType).map(([type, weapons]) => (
-          <div key={type}>
-            <h2 className="text-2xl font-semibold text-[#FFCB00] mt-8 mb-4">{type}s</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {weapons.map((weapon) => (
-                <div key={weapon.name} className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-                  <img
-                    src={weapon.image}
-                    alt={weapon.name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-xl font-semibold text-[#FFCB00] mb-4">
-                      {weapon.name}
-                    </h3>
-                    <p className="text-sm text-[#bdbdbd] mb-2">{weapon.type}</p>
-                    <p className="flex flex-row items-center text-[#EC3C7C] mb-4">
-                      <DollarSign className="w-4 h-4"/>
-                      {weapon.price}
-                    </p>
-                    <p className="text-sm text-[#bdbdbd] mb-2">
-                      {weapon.description.split('\n').map((line, index) => (
-                        <React.Fragment key={index}>
-                          {line}
-                          {index < weapon.description.split('\n').length - 1 && <br />}
-                        </React.Fragment>
-                      ))}
-                    </p>
-                    <div className="mt-4">
-                      <h4 className="text-md font-semibold text-[#FFCB00] mb-2">Key Stats:</h4>
-                      <div className="grid grid-cols-3 gap-2 text-sm text-[#bdbdbd]">
-                        <div className="flex flex-col items-center bg-[#3a3a3a] p-2 rounded">
-                          <span className="text-[#FFCB00] font-semibold mb-1">
-                            <FontAwesomeIcon icon={faFire} className="mr-1" /> Fire Rate
-                          </span>
-                          <span>{weapon.stats.fireRate}</span>
-                        </div>
-                        <div className="flex flex-col items-center bg-[#3a3a3a] p-2 rounded">
-                          <span className="text-[#FFCB00] font-semibold mb-1">
-                            <FontAwesomeIcon icon={faBars} className="mr-1" /> Magazine
-                          </span>
-                          <span>{weapon.stats.magazine}</span>
-                        </div>
-                        <div className="flex flex-col items-center bg-[#3a3a3a] p-2 rounded">
-                          <span className="text-[#FFCB00] font-semibold mb-1">
-                            <FontAwesomeIcon icon={faRunning} className="mr-1" /> Run Speed
-                          </span>
-                          <span>{weapon.stats.runSpeed}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center">
+            <label htmlFor="group" className="mr-2 text-[#FFCB00] flex items-center">
+              <FontAwesomeIcon icon={faLayerGroup} className="mr-2" />
+              Group by:
+            </label>
+            <div className="relative">
+              <select
+                id="group"
+                value={group}
+                onChange={(e) => setGroup(e.target.value)}
+                className="bg-[#333333] text-white p-2 pr-8 rounded appearance-none border border-[#444444] focus:outline-none focus:border-[#FFCB00]"
+              >
+                <option value="">❌ None</option>
+                <option value="type">🔫 Type</option>
+                <option value="price">💰 Price Range</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#FFCB00]">
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
             </div>
           </div>
-        ))}
+          <div className="flex items-center">
+            <label htmlFor="sort" className="mr-2 text-[#FFCB00] flex items-center">
+              <FontAwesomeIcon icon={faSort} className="mr-2" />
+              Sort by:
+            </label>
+            <div className="relative">
+              <select
+                id="sort"
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+                className="bg-[#333333] text-white p-2 pr-8 rounded appearance-none border border-[#444444] focus:outline-none focus:border-[#FFCB00]"
+              >
+                <option value="default">🔄 Default</option>
+                <option value="name-asc">🔠 Name (A-Z)</option>
+                <option value="name-desc">🔡 Name (Z-A)</option>
+                <option value="price-asc">💵 Price (Low to High)</option>
+                <option value="price-desc">💰 Price (High to Low)</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-[#FFCB00]">
+                <FontAwesomeIcon icon={faChevronDown} />
+              </div>
+            </div>
+          </div>
+        </div>
+        {group === 'type' ? (
+          Object.entries(weaponsByType).map(([type, weapons]) => (
+            <div key={type}>
+              <h2 className="text-2xl font-semibold text-[#FFCB00] mt-8 mb-4">{type}s</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {weapons.map((weapon) => (
+                  <Link href={`/weapon/${weapon.name.toLowerCase().replace(/ /g, "-")}`} key={weapon.name} className="transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <WeaponCard weapon={weapon} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))
+        ) : group === 'price' ? (
+          ['0-500', '501-1000', '1001+'].map((range) => (
+            <div key={range}>
+              <h2 className="text-2xl font-semibold text-[#FFCB00] mt-8 mb-4">
+                ${range === '1001+' ? '1001+' : range.replace('-', ' - $')}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredWeapons.filter((weapon) => {
+                  const [min, max] = range.split('-').map(Number);
+                  return weapon.price >= min && (max ? weapon.price <= max : true);
+                }).map((weapon) => (
+                  <Link href={`/weapon/${weapon.name.toLowerCase().replace(/ /g, "-")}`} key={weapon.name} className="transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                    <WeaponCard weapon={weapon} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredWeapons.map((weapon) => (
+              <Link href={`/weapon/${weapon.name.toLowerCase().replace(/ /g, "-")}`} key={weapon.name} className="transform transition duration-300 hover:scale-105 hover:shadow-lg">
+                <WeaponCard weapon={weapon} />
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

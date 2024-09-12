@@ -1,0 +1,115 @@
+[
+    {
+        "name": "M2 Carbon",
+        "description": "Standard-issue semi-automatic pistol.\nReliable and easy to use.\n\nPenetration: Mid",
+        "type": "Sidearm",
+        "price": 0,
+        "bundleId": [1],
+        "image": "/vault/weapons/default/m2_carbon.webp",
+        "stats": {
+            "runSpeed": 5.04,
+            "magazine": 12,
+            "fireRate": 352,
+            "reloadTime": 1.8,
+            "hipfireRange": "13.0M",
+            "damage": {
+                "midRange": {
+                    "head": 74,
+                    "body": 22,
+                    "legs": 22
+                },
+                "longRange": {
+                    "head": 66,
+                    "body": 22,
+                    "legs": 18
+                }
+            }
+        }
+    },
+    {
+        "name": "M10 Brat",
+        "description": "Fires a rapid barrage of bullets. SMall magazine so watch your ammo count.\n\nPenetration: Mid",
+        "type": "Sidearm",
+        "price": 400,
+        "bundleId": [2],
+        "image": "/vault/weapons/default/m10_brat.webp",
+        "stats": {
+            "runSpeed": 5.04,
+            "magazine": 12,
+            "fireRate": 900,
+            "reloadTime": 2.3,
+            "hipfireRange": "15.0M",
+            "damage": {
+                "midRange": {
+                    "head": 49,
+                    "body": 21,
+                    "legs": 19
+                },
+                "longRange": {
+                    "head": 34,
+                    "body": 19,
+                    "legs": 18
+                }
+            }
+        }
+    },
+    {
+        "name": "Shiv",
+        "description": "Low caliber supressed pistol.\nTracers are invisible to enemies.\nIncreased movement speed\n\nPenetration: Mid",
+        "type": "Sidearm",
+        "price": 400,
+        "bundleId": [2, 3],
+        "image": "/vault/weapons/default/shiv.webp",
+        "stats": {
+            "runSpeed": 5.35,
+            "magazine": 12,
+            "fireRate": 405,
+            "reloadTime": 1.7,
+            "hipfireRange": "18.0M",
+            "damage": {
+                "closeRange": {
+                    "head": 100,
+                    "body": 33,
+                    "legs": 26
+                },
+                "midRange": {
+                    "head": 74,
+                    "body": 26,
+                    "legs": 22
+                },
+                "longRange": {
+                    "head": 66,
+                    "body": 22,
+                    "legs": 19
+                }
+            }
+        }
+    },
+    {
+        "name": "Duster RX6",
+        "description": "High risk, high reward. Low rate of fire, so make your shots count.\n\nPenetration: Mid",
+        "type": "Sidearm",
+        "price": 800,
+        "bundleId": [3],
+        "image": "/vault/weapons/default/duster_rx6.webp",
+        "stats": {
+            "runSpeed": 5.04,
+            "magazine": 6,
+            "fireRate": 150,
+            "reloadTime": 2.3,
+            "hipfireRange": "13.0M",
+            "damage": {
+                "midRange": {
+                    "head": 160,
+                    "body": 55,
+                    "legs": 47
+                },
+                "longRange": {
+                    "head": 145,
+                    "body": 50,
+                    "legs": 43
+                }
+            }
+        }
+    }
+]
