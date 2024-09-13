@@ -27,11 +27,11 @@ export default function Header() {
               Shop
             </Link>
             <Link
-              href="/list"
+              href="/arsenal"
               className="flex flex-row justify-between gap-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors group"
             >
                 <List className="h-6 w-6 text-[#FFCB00] group-hover:text-[#EC3C7C]" />
-              List
+              Arsenal
             </Link>
             {/*
             <Link
@@ -71,10 +71,10 @@ export default function Header() {
               Shop
             </Link>
             <Link
-              href="/list"
+              href="/arsenal"
               className="block px-3 py-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors"
             >
-              List
+              Arsenal
             </Link>
             {/*
             <Link
