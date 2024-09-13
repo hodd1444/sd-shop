@@ -43,7 +43,11 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
         {skins.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {skins.map((skin) => (
-              <div key={skin.id} className="bg-[#333333] rounded-lg overflow-hidden shadow-lg flex flex-col h-80 w-full">
+              <Link
+                key={skin.id}
+                href={`/item/${skin.name.toLowerCase().split(' ').join('-')}`}
+                className="bg-[#333333] rounded-lg overflow-hidden shadow-lg flex flex-col h-80 w-full"
+              >
                 <div className="h-40 overflow-hidden p-4">
                   <img
                     src={skin.image}
@@ -85,12 +89,12 @@ export default function BundleViewer({ bundle }: BundleViewerProps) {
                     )}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         ) : (
           <p className="text-xl text-center">No items to show right now! Check back later 👻</p>
-          )}
+        )}
       </div>
     </div>
   );

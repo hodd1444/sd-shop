@@ -15,7 +15,7 @@ export default function ItemPage() {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  const item = itemList.items.find((item) => item.name === itemName);
+  const item = itemList.items.find((item) => item.name.toLowerCase() === itemName?.toLowerCase());
 
   if (!item) {
     return (

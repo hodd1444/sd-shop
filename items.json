@@ -34,7 +34,7 @@
             "name": "Cryo Kinesis Blackout",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png",
+            "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
@@ -42,7 +42,7 @@
                 {
                     "id": 1,
                     "name": "Default",
-                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.png"
+                    "image": "/vault/weapons/cryo_kinesis/blackout/cryo_kinesis_blackout.webp"
                 },
                 {
                     "id": 2,
@@ -67,7 +67,7 @@
             "name": "Cryo Kinesis Crusador",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.png",
+            "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
@@ -75,7 +75,7 @@
                 {
                     "id": 1,
                     "name": "Default",
-                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.png"
+                    "image": "/vault/weapons/cryo_kinesis/crusador/cryo_kinesis_crusador.webp"
                 },
                 {
                     "id": 2,
@@ -100,7 +100,7 @@
             "name": "Cryo Kinesis Tempest",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.png",
+            "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
@@ -108,7 +108,7 @@
                 {
                     "id": 1,
                     "name": "Default",
-                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.png"
+                    "image": "/vault/weapons/cryo_kinesis/tempest/cryo_kinesis_tempest.webp"
                 },
                 {
                     "id": 2,
@@ -130,10 +130,10 @@
         },
         {
             "id": 4,
-            "name": "Cryo Kinesis M2 Carbon",
+            "name": "Cryo Kinesis M20 Carbon",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon.png",
+            "image": "/vault/weapons/cryo_kinesis/m20_carbon/cryo_kinesis_m20_carbon.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
@@ -141,23 +141,23 @@
                 {
                     "id": 1,
                     "name": "Default",
-                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon.png"
+                    "image": "/vault/weapons/cryo_kinesis/m20_carbon/cryo_kinesis_m20_carbon.webp"
                 },
                 {
                     "id": 2,
                     "name": "Red",
-                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_red.png"
+                    "image": "/vault/weapons/cryo_kinesis/m20_carbon/cryo_kinesis_m20_carbon_red.png"
                 },
                 
                 {
                     "id": 3,
                     "name": "Pink",
-                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_pink.png"
+                    "image": "/vault/weapons/cryo_kinesis/m20_carbon/cryo_kinesis_m20_carbon_pink.png"
                 },
                 {
                     "id": 4,
                     "name": "Green",
-                    "image": "/vault/weapons/cryo_kinesis/m2_carbon/cryo_kinesis_m2_carbon_green.png"
+                    "image": "/vault/weapons/cryo_kinesis/m20_carbon/cryo_kinesis_m20_carbon_green.png"
                 }
             ]
         },
@@ -166,7 +166,7 @@
             "name": "Cryo Kinesis Melee",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/cryo_kinesis/melee/cryo_kinesis_melee.png",
+            "image": "/vault/weapons/cryo_kinesis/melee/cryo_kinesis_melee.webp",
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "bundle": 1,
@@ -177,7 +177,7 @@
             "name": "Medusa Blackout",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/medusa/medusa_blackout.png",
+            "image": "/vault/weapons/medusa/medusa_blackout.webp",
             "rarity": "Prestige",
             "color": "#F9D342",
             "bundle": 2,
@@ -188,7 +188,7 @@
             "name": "Medusa M25 Hornet",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/medusa/medusa_m25_hornet.png",
+            "image": "/vault/weapons/medusa/medusa_m25_hornet.webp",
             "rarity": "Prestige",
             "color": "#F9D342",
             "bundle": 2,
@@ -199,7 +199,7 @@
             "name": "Medusa M17 Bouncer",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/medusa/medusa_m17_bouncer.png",
+            "image": "/vault/weapons/medusa/medusa_m17_bouncer.webp",
             "rarity": "Prestige",
             "color": "#F9D342",
             "bundle": 2,
@@ -210,7 +210,7 @@
             "name": "Medusa Prototype OP",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/medusa/medusa_prototype_op.png",
+            "image": "/vault/weapons/medusa/medusa_prototype_op.webp",
             "rarity": "Prestige",
             "color": "#F9D342",
             "bundle": 2,
