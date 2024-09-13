@@ -41,28 +41,32 @@ interface WeaponCardProps {
 
 export default function WeaponCard({ weapon }: WeaponCardProps) {
   return (
-    <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg flex flex-col">
-      <div className="h-48 overflow-hidden">
+    <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg flex flex-col h-[500px] w-full">
+      <div className="h-48 overflow-hidden p-4">
         <img src={weapon.image} alt={weapon.name} className="w-full h-full object-contain" />
       </div>
-      <div className="p-4 flex-grow">
-        <h3 className="text-xl font-semibold mb-2">{weapon.name}</h3>
-        <span className="inline-block text-[#FFCB00] bg-[#444444] text-xs px-2 py-1 rounded-full mb-2">{weapon.type}</span>
-        <p className="text-sm text-gray-300 mb-4">{weapon.description}</p>
-        <div className="flex justify-between items-center mb-4">
-          <span className="flex items-center text-[#EC3C7C]">
-            <DollarSign className="w-4 h-4 mr-1" />
-            {weapon.price}
-          </span>
+      <div className="p-4 flex flex-col justify-between flex-grow">
+        <div>
+          <h3 className="text-xl font-semibold mb-2 truncate">{weapon.name}</h3>
+          <span className="inline-block text-[#FFCB00] bg-[#444444] text-xs px-2 py-1 rounded-full mb-2">{weapon.type}</span>
+          <p className="text-sm text-gray-300 mb-4 line-clamp-3">{weapon.description}</p>
         </div>
-        {weapon.name !== "Melee" && (
-          <div className="grid grid-cols-2 gap-2 text-sm">
-            <StatItem icon={faRunning} value={`${weapon.stats.runSpeed}`} label="Run Speed" maxValue={8} />
-            <StatItem icon={faBars} value={weapon.stats.magazine} label="Magazine" maxValue={125} />
-            <StatItem icon={faFire} value={`${weapon.stats.fireRate}`} label="Fire Rate" maxValue={1000} />
-            <StatItem icon={faClock} value={`${weapon.stats.reloadTime}s`} label="Reload Time" maxValue={7} />
+        <div>
+          <div className="flex justify-between items-center mb-4">
+            <span className="flex items-center text-[#EC3C7C]">
+              <DollarSign className="w-4 h-4 mr-1" />
+              {weapon.price.length > 1 ? `${weapon.price[0]} - ${weapon.price[weapon.price.length - 1]}` : weapon.price[0]}
+            </span>
           </div>
-        )}
+          {weapon.name !== "Melee" && (
+            <div className="grid grid-cols-2 gap-2 text-sm">
+              <StatItem icon={faRunning} value={`${weapon.stats.runSpeed}`} label="Run Speed" maxValue={8} />
+              <StatItem icon={faBars} value={weapon.stats.magazine} label="Magazine" maxValue={125} />
+              <StatItem icon={faFire} value={`${weapon.stats.fireRate}`} label="Fire Rate" maxValue={1000} />
+              <StatItem icon={faClock} value={`${weapon.stats.reloadTime}s`} label="Reload Time" maxValue={7} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

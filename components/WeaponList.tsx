@@ -142,7 +142,7 @@ export default function WeaponList() {
       <div className="absolute backdrop-blur-sm rounded-lg inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4 z-10">
         <p className="text-lg font-bold mb-2">{weapon.name}</p>
         <div className="text-sm space-y-1">
-          <p><FontAwesomeIcon icon={faDollarSign} className="mr-1" /> Price: {weapon.price}</p>
+          <p><FontAwesomeIcon icon={faDollarSign} className="mr-1" /> Price: {weapon.price[0]}</p>
           <p><FontAwesomeIcon icon={faGun} className="mr-1" /> Type: {weapon.type}</p>
           <p><FontAwesomeIcon icon={faList} className="mr-1" /> Magazine: {weapon.stats.magazine}</p>
           {weapon.stats.damage.closeRange && (
@@ -225,17 +225,22 @@ export default function WeaponList() {
         </div>
       ));
     } else if (group === 'price') {
-      const priceRanges = ['0-500', '501-1000', '1001+'];
+      const priceRanges = [
+        { min: 0, max: 500, label: '$0 - $500' },
+        { min: 501, max: 1000, label: '$501 - $1,000' },
+        { min: 1001, max: 2000, label: '$1,001 - $2,000' },
+        { min: 2001, max: 5000, label: '$2,001 - $5,000' },
+        { min: 5001, max: Infinity, label: '$5,001+' }
+      ];
       return priceRanges.map((range) => {
-        const [min, max] = range.split('-').map(Number);
         const weapons = filteredWeapons.filter((weapon) =>
-          weapon.price[0] >= min && (max ? weapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && weapon.price[0] <= range.max
         );
         if (weapons.length === 0) return null;
         return (
-          <div key={range}>
+          <div key={range.label}>
             <h2 className="text-2xl font-semibold text-[#FFCB00] mt-8 mb-4">
-              ${range === '1001+' ? '1001+' : range.replace('-', ' - $')}
+              {range.label}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {weapons.map(renderWeaponLink)}
