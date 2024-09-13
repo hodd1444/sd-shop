@@ -1,9 +1,30 @@
 [
     {
+        "name": "Melee",
+        "description": "The Melee is a basic melee weapon. It is the default weapon that players start with.",
+        "type": "Melee",
+        "price": [0],
+        "bundleId": [0],
+        "image": "/vault/weapons/default/melee.webp",
+        "stats": {
+            "runSpeed": 0,
+            "magazine": 0,
+            "fireRate": 0,
+            "reloadTime": 0,
+            "hipfireRange": 0,
+            "damage": {
+                "front": 50,
+                "back": 150,
+                "side": 50
+            }
+        }
+
+    },
+    {
         "name": "M2 Carbon",
         "description": "Standard-issue semi-automatic pistol.\nReliable and easy to use.\n\nPenetration: Mid",
         "type": "Sidearm",
-        "price": 0,
+        "price": [0],
         "bundleId": [1],
         "image": "/vault/weapons/default/m2_carbon.webp",
         "stats": {
@@ -13,12 +34,12 @@
             "reloadTime": 1.8,
             "hipfireRange": "13.0M",
             "damage": {
-                "midRange": {
+                "0-25m": {
                     "head": 74,
                     "body": 22,
                     "legs": 22
                 },
-                "longRange": {
+                "25m+": {
                     "head": 66,
                     "body": 22,
                     "legs": 18
@@ -30,7 +51,7 @@
         "name": "M10 Brat",
         "description": "Fires a rapid barrage of bullets. SMall magazine so watch your ammo count.\n\nPenetration: Mid",
         "type": "Sidearm",
-        "price": 400,
+        "price": [400],
         "bundleId": [2],
         "image": "/vault/weapons/default/m10_brat.webp",
         "stats": {
@@ -40,12 +61,12 @@
             "reloadTime": 2.3,
             "hipfireRange": "15.0M",
             "damage": {
-                "midRange": {
+                "0-25m": {
                     "head": 49,
                     "body": 21,
                     "legs": 19
                 },
-                "longRange": {
+                "25m+": {
                     "head": 34,
                     "body": 19,
                     "legs": 18
@@ -57,7 +78,7 @@
         "name": "Shiv",
         "description": "Low caliber supressed pistol.\nTracers are invisible to enemies.\nIncreased movement speed\n\nPenetration: Mid",
         "type": "Sidearm",
-        "price": 400,
+        "price": [400,800],
         "bundleId": [2, 3],
         "image": "/vault/weapons/default/shiv.webp",
         "stats": {
@@ -67,17 +88,17 @@
             "reloadTime": 1.7,
             "hipfireRange": "18.0M",
             "damage": {
-                "closeRange": {
+                "0-12m": {
                     "head": 100,
                     "body": 33,
                     "legs": 26
                 },
-                "midRange": {
+                "12-25m": {
                     "head": 74,
                     "body": 26,
                     "legs": 22
                 },
-                "longRange": {
+                "25m+": {
                     "head": 66,
                     "body": 22,
                     "legs": 19
@@ -89,8 +110,8 @@
         "name": "Duster RX6",
         "description": "High risk, high reward. Low rate of fire, so make your shots count.\n\nPenetration: Mid",
         "type": "Sidearm",
-        "price": 800,
-        "bundleId": [3],
+        "price": [800,1000],
+        "bundleId": [3,5],
         "image": "/vault/weapons/default/duster_rx6.webp",
         "stats": {
             "runSpeed": 5.04,
@@ -99,15 +120,438 @@
             "reloadTime": 2.3,
             "hipfireRange": "13.0M",
             "damage": {
-                "midRange": {
+                "0-25m": {
                     "head": 160,
                     "body": 55,
                     "legs": 47
                 },
-                "longRange": {
+                "25m+": {
                     "head": 145,
                     "body": 50,
                     "legs": 43
+                }
+            }
+        }
+    },
+    {
+        "name": "M25 Hornet",
+        "description": "Submachine gun with precise recoil control in short bursts. Perfect for mid-range encounters.\n\nPenetration: Low",
+        "type": "SMG",
+        "category": "Main",
+        "price": [900,1000,1200],
+        "bundleId": [4,5,6],
+        "image": "/vault/weapons/default/m25_hornet.webp",
+        "stats": {
+            "runSpeed": 4.75,
+            "magazine": 25,
+            "fireRate": 750,
+            "reloadTime": 2.0,
+            "hipfireRange": "8.0M",
+            "damage": {
+                "0-20m": {
+                    "head": 67,
+                    "body": 29,
+                    "legs": 23
+                },
+                "20m+": {
+                    "head": 62,
+                    "body": 24,
+                    "legs": 22
+                }
+            }
+        }
+    },
+    {
+        "name": "M17 Bouncer",
+        "description": "Pump-action shotgun with formidable stopping power. Great for close-range engagements.\nInterruptible reload.\n\nPenetration: Low",
+        "type": "Shotgun",
+        "category": "Main",
+        "price": [900],
+        "bundleId": [4],
+        "image": "/vault/weapons/default/m17_bouncer.webp",
+        "stats": {
+            "runSpeed": 4.36,
+            "magazine": 5,
+            "fireRate": 60,
+            "reloadTime": 4.2,
+            "hipfireRange": "7.0M",
+            "damage": {
+                "0-8m": {
+                    "head": 44,
+                    "body": 22,
+                    "legs": 19
+                },
+                "8-12m": {
+                    "head": 34,
+                    "body": 17,
+                    "legs": 14
+                },
+                "12m+": {
+                    "head": 18,
+                    "body": 9,
+                    "legs": 8
+                }
+            }
+        }
+    },
+    {
+        "name": "Harpe",
+        "description": "Lightweight semi-automatic sniper rifle. Inaccurate when moving. Lethal headshots at any range.\n\nPenetration: High",
+        "type": "Sniper",
+        "category": "Main",
+        "price": [1200,1500],
+        "bundleId": [6,7],
+        "image": "/vault/weapons/default/harpe.webp",
+        "stats": {
+            "runSpeed": 4.36,
+            "magazine": 5,
+            "fireRate": 90,
+            "reloadTime": 2.0,
+            "hipfireRange": "5.0M",
+            "damage": {
+                "0m+": {
+                    "head": 202,
+                    "body": 101,
+                    "legs": 85
+                }
+            }
+        }
+    },
+    {
+        "name": "Buzzsaw RT40",
+        "description": "Rapidfire submachine gun with a large magazine. Recoil can be difficult to control.\n\nPenetration: Low",
+        "type": "SMG",
+        "price": [1500,1600,1700],
+        "bundleId": [7,8,9],
+        "image": "/vault/weapons/default/buzzsaw_rt40.webp",
+        "stats": {
+            "runSpeed": 4.75,
+            "magazine": 40,
+            "fireRate": 840,
+            "reloadTime": 2.3,
+            "hipfireRange": "10.0M",
+            "damage": {
+                "0-20m": {
+                    "head": 62,
+                    "body": 25,
+                    "legs": 25
+                },
+                "20m+": {
+                    "head": 49,
+                    "body": 24,
+                    "legs": 24
+                }
+            }
+        }
+    },
+    {
+        "name": "Trident",
+        "description": "Burst assault rifle with precision optics. Great for disciplined marksmanship. 3-round burst.\n\nPenetration: High",
+        "type": "Burst AR",
+        "category": "Main",
+        "price": [1600],
+        "bundleId": [8],
+        "image": "/vault/weapons/default/trident.webp",
+        "stats": {
+            "runSpeed": 4.50,
+            "magazine": 18,
+            "fireRate": 760,
+            "reloadTime": 2.3,
+            "hipfireRange": "15.0M",
+            "damage": {
+                "0m+": {
+                    "head": 116,
+                    "body": 33,
+                    "legs": 30
+                }
+            }
+        }
+    },
+    {
+        "name": "Whisper",
+        "description": "Recoil is hard to control, but settles into a steady rhythm. Tracers are invisible to enemies. Increases movement speed.\n\nPenetration: Low",
+        "type": "SMG",
+        "price": [1700],
+        "bundleId": [9,16],
+        "image": "/vault/weapons/default/whisper.webp",
+        "stats": {
+            "runSpeed": 5.04,
+            "magazine": 25,
+            "fireRate": 666,
+            "reloadTime": 2.0,
+            "hipfireRange": "10.0M",
+            "damage": {
+                "0-20m": {
+                    "head": 78,
+                    "body": 28,
+                    "legs": 28
+                },
+                "20m+": {
+                    "head": 62,
+                    "body": 24,
+                    "legs": 22
+                }
+            }
+        }
+    },
+    {
+        "name": "Cyclone",
+        "description": "Reliable, standard-issue rifle suitable for various combat scenarios. Great for mid to long-range engagements.\n\nPenetration: High",
+        "type": "AR",
+        "category": "Main",
+        "price": [2300,2400,2500],
+        "bundleId": [10,11,12],
+        "image": "/vault/weapons/default/cyclone.webp",
+        "stats": {
+            "runSpeed": 4.50,
+            "magazine": 30,
+            "fireRate": 590,
+            "reloadTime": 2.5,
+            "hipfireRange": "15.0M",
+            "damage": {
+                "0-15m": {
+                    "head": 140,
+                    "body": 35,
+                    "legs": 33
+                },
+                "15-30m": {
+                    "head": 124,
+                    "body": 33,
+                    "legs": 26
+                },
+                "30m+": {
+                    "head": 116,
+                    "body": 30,
+                    "legs": 25
+                }
+            }
+        }
+    },
+    {
+        "name": "M18 Drummer",
+        "description": "Fully automatic shotgun with a high-capacity drum magazine. Overheats when fired continuously.\n\nPenetration: Low",
+        "type": "Auto Shotgun",
+        "category": "Main",
+        "price": [2300,6100],
+        "bundleId": [10,17],
+        "image": "/vault/weapons/default/m18_drummer.webp",
+        "stats": {
+            "runSpeed": 4.36,
+            "magazine": 18,
+            "fireRate": 160,
+            "reloadTime": 3.3,
+            "hipfireRange": "7.0M",
+            "damage": {
+                "0-10m": {
+                    "head": 25,
+                    "body": 17,
+                    "legs": 14
+                },
+                "10-15m": {
+                    "head": 15,
+                    "body": 10,
+                    "legs": 8
+                },
+                "15m+": {
+                    "head": 11,
+                    "body": 7,
+                    "legs": 5
+                }
+            }
+        }
+    },
+    {
+        "name": "M49 Fury",
+        "description": "Slow rate of fire and a large magazine. Ideal for laying down suppressive fire.\n\nPenetration: High",
+        "type": "Machine Gun",
+        "category": "Main",
+        "price": [2400],
+        "bundleId": [11],
+        "image": "/vault/weapons/default/m49_fury.webp",
+        "stats": {
+            "runSpeed": 4.5,
+            "magazine": 50,
+            "fireRate": 525,
+            "reloadTime": 2.5,
+            "hipfireRange": "10.0M",
+            "damage": {
+                "0-30m": {
+                    "head": 62,
+                    "body": 38,
+                    "legs": 33
+                },
+                "30m+": {
+                    "head": 56,
+                    "body": 33,
+                    "legs": 31
+                }
+            }
+        }
+    },
+    {
+        "name": "Tempest",
+        "description": "Semi-automatic rifle with lethal headshots at any range. High zoom optics are great for long range.\n\nPenetration: High",
+        "type": "Semi-Auto AR",
+        "category": "Main",
+        "price": [2500],
+        "bundleId": [12],
+        "image": "/vault/weapons/default/tempest.webp",
+        "stats": {
+            "runSpeed": 4.5,
+            "magazine": 12,
+            "fireRate": 300,
+            "reloadTime": 2.3,
+            "hipfireRange": "11.0M",
+            "damage": {
+                "0-15m": {
+                    "head": 250,
+                    "body": 65,
+                    "legs": 49
+                },
+                "15-30m": {
+                    "head": 203,
+                    "body": 50,
+                    "legs": 33
+                },
+                "30m+": {
+                    "head": 156,
+                    "body": 41,
+                    "legs": 31
+                }
+            }
+        }
+    },
+    {
+        "name": "Crusader",
+        "description": "Assault rifle with precise sustained recoil control. Excels at mid-long range encounters.\n\nPenetration: High",
+        "type": "AR",
+        "category": "Main",
+        "price": [3800, 4100, 4100],
+        "bundleId": [13,14,15],
+        "image": "/vault/weapons/default/crusader.webp",
+        "stats": {
+            "runSpeed": 4.5,
+            "magazine": 30,
+            "fireRate": 666,
+            "reloadTime": 2.5,
+            "hipfireRange": "19.0M",
+            "damage": {
+                "0-15m": {
+                    "head": 140,
+                    "body": 39,
+                    "legs": 33
+                },
+                "15-30m": {
+                    "head": 126,
+                    "body": 34,
+                    "legs": 30
+                },
+                "30m+": {
+                    "head": 130,
+                    "body": 31,
+                    "legs": 26
+                }
+            }
+        }
+    },
+    {
+        "name": "Berserker RB3",
+        "description": "High rate of fire belt-fed machine gun. Recoil becomes easier to manage over time. Rate of fire increases during full auto.\n\nPenetration: High",
+        "type": "Machine Gun",
+        "category": "Main",
+        "price": [3800],
+        "bundleId": [13],
+        "image": "/vault/weapons/default/berserker_rb3.webp",
+        "stats": {
+            "runSpeed": 4.5,
+            "magazine": 75,
+            "fireRate": 600,
+            "reloadTime": 5.1,
+            "hipfireRange": "10.0M",
+            "damage": {
+                "0-20m": {
+                    "head": 75,
+                    "body": 45,
+                    "legs": 37
+                },
+                "20m+": {
+                    "head": 62,
+                    "body": 38,
+                    "legs": 31
+                }
+            }
+        }
+    },
+    {
+        "name": "Blackout",
+        "description": "High rate of fire assault rifle with a built-in suppressor. Tracers are invisible to enemies. Increased move speed.\n\nPenetration: High",
+        "type": "AR",
+        "category": "Main",
+        "price": [4100, 7200],
+        "bundleId": [14,18],
+        "image": "/vault/weapons/default/blackout.webp",
+        "stats": {
+            "runSpeed": 4.77,
+            "magazine": 25,
+            "fireRate": 680,
+            "reloadTime": 2.5,
+            "hipfireRange": "19.0M",
+            "damage": {
+                "0-15m": {
+                    "head": 140,
+                    "body": 35,
+                    "legs": 30
+                },
+                "15m+": {
+                    "head": 124,
+                    "body": 31,
+                    "legs": 26
+                }
+            }
+        }
+    },
+    {
+        "name": "M67 Reaver",
+        "description": "High caliber assault rifle with a slow rate of fire. Lethal headshots at any range.\n\nPenetration: High",
+        "type": "AR",
+        "category": "Main",
+        "price": [4100],
+        "bundleId": [15],
+        "image": "/vault/weapons/default/m67_reaver.webp",
+        "stats": {
+            "runSpeed": 4.5,
+            "magazine": 25,
+            "fireRate": 550,
+            "reloadTime": 2.1,
+            "hipfireRange": "15.0M",
+            "damage": {
+                "0m+": {
+                    "head": 156,
+                    "body": 39,
+                    "legs": 33
+                }
+            }
+        }
+    },
+    {
+        "name": "Prototype-OP",
+        "description": "Bolt action sniper rigle capable of a one-shot-kill at any range. Inaccurate when moving. One-shot-kill.\n\nPenetration: High",
+        "type": "Sniper",
+        "category": "Main",
+        "price": [5900, 6100, 7200],
+        "bundleId": [16,17,18],
+        "image": "/vault/weapons/default/prototype-op.webp",
+        "stats": {
+            "runSpeed": 4.36,
+            "magazine": 5,
+            "fireRate": 33,
+            "reloadTime": 2.0,
+            "hipfireRange": "2.0M",
+            "damage": {
+                "0m+": {
+                    "head": 255,
+                    "body": 150,
+                    "legs": 124
                 }
             }
         }

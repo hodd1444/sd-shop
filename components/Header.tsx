@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="bg-[#272727] text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 lg:px-0">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center gap-4">
             <Link href="https://playspectre.com">
@@ -69,7 +69,14 @@ export default function Header() {
               className="block px-3 py-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors"
             >
               Shop
-            </Link>{/*
+            </Link>
+            <Link
+              href="/list"
+              className="block px-3 py-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors"
+            >
+              List
+            </Link>
+            {/*
             <Link
               href="/bundles"
               className="block px-3 py-2 text-[#FFCB00] hover:text-[#EC3C7C] transition-colors"

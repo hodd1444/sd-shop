@@ -9,7 +9,8 @@ interface WeaponCardProps {
     name: string;
     description: string;
     type: string;
-    price: number;
+    price: number[];
+    bundleId: number[];
     image: string;
     stats: {
       runSpeed: number;
@@ -17,8 +18,25 @@ interface WeaponCardProps {
       fireRate: number;
       reloadTime: number;
       hipfireRange: string;
+      damage: {
+        closeRange?: {
+          head: number;
+          body: number;
+          legs: number;
+        };
+        midRange?: {
+          head: number;
+          body: number;
+          legs: number;
+        };
+        longRange?: {
+          head: number;
+          body: number;
+          legs: number;
+        };
+      };
     };
-  };
+  }
 }
 
 export default function WeaponCard({ weapon }: WeaponCardProps) {
@@ -29,7 +47,7 @@ export default function WeaponCard({ weapon }: WeaponCardProps) {
       </div>
       <div className="p-4 flex-grow">
         <h3 className="text-xl font-semibold mb-2">{weapon.name}</h3>
-        <p className="text-sm text-gray-300 mb-2">{weapon.type}</p>
+        <span className="inline-block text-[#FFCB00] bg-[#444444] text-xs px-2 py-1 rounded-full mb-2">{weapon.type}</span>
         <p className="text-sm text-gray-300 mb-4">{weapon.description}</p>
         <div className="flex justify-between items-center mb-4">
           <span className="flex items-center text-[#EC3C7C]">
@@ -37,23 +55,32 @@ export default function WeaponCard({ weapon }: WeaponCardProps) {
             {weapon.price}
           </span>
         </div>
-        <div className="grid grid-cols-2 gap-2 text-sm">
-          <StatItem icon={faRunning} value={`${weapon.stats.runSpeed} m/s`} label="Run Speed" />
-          <StatItem icon={faBars} value={weapon.stats.magazine} label="Magazine" />
-          <StatItem icon={faFire} value={`${weapon.stats.fireRate} rpm`} label="Fire Rate" />
-          <StatItem icon={faClock} value={`${weapon.stats.reloadTime}s`} label="Reload Time" />
-        </div>
+        {weapon.name !== "Melee" && (
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            <StatItem icon={faRunning} value={`${weapon.stats.runSpeed}`} label="Run Speed" maxValue={8} />
+            <StatItem icon={faBars} value={weapon.stats.magazine} label="Magazine" maxValue={125} />
+            <StatItem icon={faFire} value={`${weapon.stats.fireRate}`} label="Fire Rate" maxValue={1000} />
+            <StatItem icon={faClock} value={`${weapon.stats.reloadTime}s`} label="Reload Time" maxValue={7} />
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function StatItem({ icon, value, label }: { icon: IconDefinition; value: string | number; label: string }) {
+function StatItem({ icon, value, label, maxValue }: { icon: IconDefinition; value: string | number; label: string; maxValue: number }) {
+  const numericValue = typeof value === 'string' ? parseFloat(value) : value;
+  const percentage = (numericValue / maxValue) * 100;
+
   return (
-    <div className="flex flex-col items-center bg-[#444444] p-2 rounded">
-      <FontAwesomeIcon icon={icon} className="text-[#FFCB00] mb-1" />
-      <span className="font-semibold">{value}</span>
-      <span className="text-xs text-gray-300">{label}</span>
+    <div className="flex flex-col items-center bg-[#444444] p-2 rounded relative overflow-hidden">
+      <div
+        className="absolute inset-0 bg-[#FFCB00] opacity-20"
+        style={{ width: `${percentage}%` }}
+      />
+      <FontAwesomeIcon icon={icon} className="text-[#FFCB00] mb-1 z-10" />
+      <span className="font-semibold z-10">{value}</span>
+      <span className="text-xs text-gray-300 z-10">{label}</span>
     </div>
   );
 }
