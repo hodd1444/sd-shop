@@ -251,10 +251,10 @@
         },
         {
             "id": 13,
-            "name": "Wasabi Stringer",
+            "name": "Wasabi M25 Hornet",
             "type": "weapon",
             "price": "bundle",
-            "image": "/vault/weapons/wasabi/wasabi_stinger.webp",
+            "image": "/vault/weapons/wasabi/wasabi_m25_hornet.webp",
             "rarity": "Elite",
             "color": "#B661FF",
             "bundle": 3,

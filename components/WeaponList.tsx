@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGun, faLayerGroup, faBan, faDollarSign, faSort, faList, faSortAlphaDown, faSortAlphaDownAlt, faSortNumericDown, faSortNumericDownAlt, faCrosshairs, faSearch, faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import WeaponCard from "./WeaponCard";
 
-interface Weapon {
+export interface Weapon {
   name: string;
   description: string;
   type: string;
