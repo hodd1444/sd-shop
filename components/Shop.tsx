@@ -6,6 +6,26 @@ import { BundleBannerCard } from "./BundleBannerCard";
 const bundles1 = [
   {
     id: 1,
+    name: "Cyberlord Bundle",
+    price: "4,800",
+    image: "/shop_091724/cyberlord_bundle.webp",
+    imageSet: []
+  }
+]
+
+const bundles2 = [
+  {
+    id: 1,
+    name: "Cyberlord",
+    price: "1,500",
+    image: "/shop_091724/cyberlord.webp",
+    imageSet: []
+  }
+]
+
+const bundles3 = [
+  {
+    id: 1,
     name: "Wasabi Bundle",
     price: "2,600",
     image: "/shop_091024/wasabi_bundle/wasabi_bundle.webp",
@@ -43,7 +63,7 @@ const bundles1 = [
   }
 ]
 
-const bundles2 = [
+const oldBundles2 = [
   {
     id: 1,
     name: "Cryo Kinesis Bundle",
@@ -118,7 +138,42 @@ const bundles2 = [
   },
 ];
 
-const spotlight = [
+const spotlight1 = [
+  {
+    id: 1,
+    name: "District Defender Bundle",
+    price: "1,500",
+    image: "/shop_091724/district_defender_bundle.webp",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 2,
+    name: "Eternal Warrior Crusader",
+    price: "1,200",
+    image: "/shop_091724/eternal_warrior_crusader.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 3,
+    name: "Troublemaker Cyclone",
+    price: "800",
+    image: "/shop_091724/troublemaker_cyclone.webp",
+    rarity: "purple",
+    color: "#B661FF",
+  },
+  {
+    id: 4,
+    name: "Troublemaker M18 Drummer",
+    price: "800",
+    image: "/shop_091724/troublemaker_m18_drummer.webp",
+    rarity: "purple",
+    color: "#B661FF",
+  },
+]
+
+const spotlight2 = [
   {
     id: 1,
     name: "Hellion Bundle",
@@ -279,9 +334,10 @@ const offers4 = [
 
 export default function Shop() {
   const [offerTimeLeft, setShopTimeLeft] = useState("23:59:59");
-  const [featuredTimeLeft, setFeaturedTimeLeft] = useState("23:59:59");
+  const [featured1TimeLeft, setFeatured1TimeLeft] = useState("23:59:59");
   const [featured2TimeLeft, setFeatured2TimeLeft] = useState("23:59:59");
-  const [spotlightTimeLeft, setSpotlightTimeLeft] = useState("23:59:59");
+  const [spotlight1TimeLeft, setSpotlight1TimeLeft] = useState("23:59:59");
+  const [spotlight2TimeLeft, setSpotlight2TimeLeft] = useState("23:59:59");
 
   const shopAvailable = true;
   useEffect(() => {
@@ -314,13 +370,12 @@ export default function Shop() {
 
   // Featured 1
   useEffect(() => {
-    const shopResetDate = new Date(Date.UTC(2024, 8, 17, 20, 0, 0, 0));
+    const featured1ResetDate = new Date(Date.UTC(2024, 8, 31, 20, 0, 0, 0));
 
-    console.log(shopResetDate);
 
     const updateCountdownFeatured = () => {
       const now = new Date();
-      const timeDiff = shopResetDate.getTime() - now.getTime();
+      const timeDiff = featured1ResetDate.getTime() - now.getTime();
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
@@ -328,7 +383,7 @@ export default function Shop() {
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
-      setFeaturedTimeLeft(
+      setFeatured1TimeLeft(
         `${days.toString()} DAYS ${hours
           .toString()
           .padStart(2, "0")} HOURS ${minutes
@@ -347,7 +402,6 @@ export default function Shop() {
   useEffect(() => {
     const featured2ResetDate = new Date(Date.UTC(2024, 8, 24, 20, 0, 0, 0));
 
-    console.log(featured2ResetDate);
 
     const updateCountdownFeatured2 = () => {
       const now = new Date();
@@ -377,13 +431,13 @@ export default function Shop() {
 
   // Spotlight Time Counter
   useEffect(() => {
-    const spotlightResetDate = new Date(Date.UTC(2024, 9, 8, 20, 0, 0, 0));
+    const spotlight1ResetDate = new Date(Date.UTC(2024, 9, 15, 20, 0, 0, 0));
 
-    console.log(spotlightResetDate);
+    console.log(spotlight1ResetDate);
 
     const updateCountdownSpotlight = () => {
       const now = new Date();
-      const timeDiff = spotlightResetDate.getTime() - now.getTime();
+      const timeDiff = spotlight1ResetDate.getTime() - now.getTime();
 
       const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
@@ -391,7 +445,7 @@ export default function Shop() {
       );
       const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
 
-      setSpotlightTimeLeft(
+      setSpotlight1TimeLeft(
         `${days.toString()} DAYS ${hours
           .toString()
           .padStart(2, "0")} HOURS ${minutes
@@ -406,20 +460,52 @@ export default function Shop() {
     return () => clearInterval(countdownInterval);
   }, []);
 
+  // Spotlight 2
+  useEffect(() => {
+    const spotlight2ResetDate = new Date(Date.UTC(2024, 9, 8, 20, 0, 0, 0));
+
+    console.log(spotlight2ResetDate);
+
+    const updateCountdownSpotlight2 = () => {
+      const now = new Date();
+      const timeDiff = spotlight2ResetDate.getTime() - now.getTime();
+
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+      setSpotlight2TimeLeft(
+        `${days.toString()} DAYS ${hours
+          .toString()
+          .padStart(2, "0")} HOURS ${minutes
+            .toString()
+            .padStart(2, "0")} MINUTES`,
+      );
+    };
+
+    updateCountdownSpotlight2();
+    const countdownInterval = setInterval(updateCountdownSpotlight2, 60000);
+
+    return () => clearInterval(countdownInterval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#272727] text-white p-8 flex flex-col items-center justify-center">
       <div className="max-w-5xl w-full">
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">FEATURED</h2>
-          <p className="text-gray-400">{featured2TimeLeft}</p>
+          <p className="text-gray-400">{featured1TimeLeft}</p>
         </div>
 
         <div className="flex flex-col justify-between gap-8">
           <BundleBannerCard bundles={bundles1} />
         </div>
+
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">FEATURED</h2>
-          <p className="text-gray-400">{featuredTimeLeft}</p>
+          <p className="text-gray-400">{featured1TimeLeft}</p>
         </div>
 
         <div className="flex flex-col justify-between gap-8">
@@ -427,12 +513,59 @@ export default function Shop() {
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">FEATURED</h2>
+          <p className="text-gray-400">{featured2TimeLeft}</p>
+        </div>
+
+        <div className="flex flex-col justify-between gap-8">
+          <BundleBannerCard bundles={bundles3} />
+        </div>
+
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">SPOTLIGHT</h2>
-          <p className="text-gray-400">{spotlightTimeLeft}</p>
+          <p className="text-gray-400">{spotlight1TimeLeft}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {spotlight.map((item, index) => (
+          {spotlight1.map((item, index) => (
+            <div
+              key={item.id}
+              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 1 ? "sm:col-span-2" : "sm:col-span-1"
+                }`}
+            >
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-full h-3/4 object-cover"
+              />
+              <div className="flex flex-col justify-between p-4">
+                <h3
+                  className={`text-lg font-semibold mb-2`}
+                  style={{
+                    color: item.color,
+                  }}
+                >
+                  {item.name}
+                </h3>
+                <div className="flex items-center text-[#bdbdbd]">
+                  <img
+                    src="/spectre_points_gray.webp"
+                    className="w-5 h-5 mr-1"
+                  />
+                  <span>{item.price}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">SPOTLIGHT</h2>
+          <p className="text-gray-400">{spotlight2TimeLeft}</p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {spotlight2.map((item, index) => (
             <div
               key={item.id}
               className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 2 ? "sm:col-span-2" : "sm:col-span-1"
