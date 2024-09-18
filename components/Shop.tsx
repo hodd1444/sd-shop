@@ -9,7 +9,9 @@ const bundles1 = [
     name: "Cyberlord Bundle",
     price: "4,800",
     image: "/shop_091724/cyberlord_bundle.webp",
-    imageSet: []
+    imageSet: [],
+    rarity: "red",
+    color: "#EA3546",
   }
 ]
 
@@ -19,7 +21,22 @@ const bundles2 = [
     name: "Cyberlord",
     price: "1,500",
     image: "/shop_091724/cyberlord.webp",
-    imageSet: []
+    imageSet: [
+      {
+        id: 0,
+        src: "/shop_091724/cyberlord_splashart/BG.webp",
+      },
+      {
+        id: 1,
+        src: "/shop_091724/cyberlord_splashart/1.webp",
+      },
+      {
+        id: 2,
+        src: "/shop_091724/cyberlord_splashart/2.webp",
+      },
+    ],
+    rarity: "red",
+    color: "#EA3546",
   }
 ]
 
