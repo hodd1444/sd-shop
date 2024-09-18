@@ -2,7 +2,7 @@
 import { Coins } from "lucide-react";
 import items from "@/items.json";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { toast } from "react-toastify";
 
 interface ItemCardProps {
@@ -14,6 +14,7 @@ interface ItemCardProps {
   color: string;
   bundle: number;
   variants?: { id: number; name: string; image: string }[];
+  animations?: { id: number; name: string; image: string }[];
 }
 
 export default function ItemCard({
@@ -25,11 +26,26 @@ export default function ItemCard({
   color,
   bundle,
   variants,
+  animations,
 }: ItemCardProps) {
   const [selectedVariant, setSelectedVariant] = useState(image);
+  const [selectedAnimation, setSelectedAnimation] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const changeVariant = (image: string) => () => {
     setSelectedVariant(image);
+  };
+
+  const showAnimation = (video: string) => () => {
+    if (selectedAnimation === video) {
+      setSelectedAnimation(null);
+    } else {
+      setSelectedAnimation(video);
+    }
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play();
+    }
   };
 
   const handleAddToOwned = () => {
@@ -41,7 +57,7 @@ export default function ItemCard({
       pauseOnHover: true,
       draggable: true,
     }); */
-    toast.dark(`This feature is currently in development!`,   {
+    toast.dark(`This feature is currently in development!`, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -55,8 +71,9 @@ export default function ItemCard({
     });
   };
 
+
   const handleAddToWishlist = () => {
-    toast.dark(`This feature is currently in development!`,   {
+    toast.dark(`This feature is currently in development!`, {
       position: "top-right",
       autoClose: 3000,
       hideProgressBar: false,
@@ -81,11 +98,12 @@ export default function ItemCard({
         </div>
         <div className="flex flex-col justify-center gap-8 shadow-md">
           <div className="lg:col-span-2">
-            <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg" style={{ width: '100%', height: '400px' }}>
               <img
                 src={selectedVariant}
                 alt={name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
+                style={{ maxWidth: '100%', maxHeight: '100%' }}
               />
             </div>
           </div>
@@ -119,7 +137,7 @@ export default function ItemCard({
                 </li>
                 <li className="flex justify-between">
                   <span>Rarity:</span>
-                  <span style={{color: color}}>{rarity}</span>
+                  <span style={{ color: color }}>{rarity}</span>
                 </li>
                 <li className="flex justify-between">
                   <span>Bundle:</span>
@@ -148,7 +166,37 @@ export default function ItemCard({
                 ))}
               </div>
             )}
-
+            {animations && (
+              <div className="flex flex-col gap-4 justify-center mb-4">
+                <p className="text-xl text-center font-semibold mb-4 text-[#FFCB00]">Animations</p>
+                <div className="flex flex-row justify-between gap-4">
+                  {animations.map((animation, index) => (
+                    <button 
+                      onClick={showAnimation(animation.image)} 
+                      key={index} 
+                      className="flex-1"
+                    >
+                      <div className={`flex flex-col items-center justify-between gap-4 bg-[#333333] p-4 rounded-lg hover:bg-gray-700 h-full ${selectedAnimation === animation.image ? 'bg-gray-700' : ''}`}>
+                        <div className="w-16 h-16 bg-cover bg-center rounded-lg">
+                          <video width="100%" height="100%" muted>
+                            <source src={animation.image} type="video/mp4" />
+                          </video>
+                        </div>
+                        <p className="text-xl font-semibold">{animation.name}</p>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            {selectedAnimation && (
+              <div className="mt-4">
+                <video ref={videoRef} controls width="100%">
+                  <source src={selectedAnimation} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            )}
             <div className="flex flex-row justify-between gap-8 p-4">
               <button className="w-full bg-[#FFCB00] text-[#272727] py-2 px-4 rounded-full font-semibold hover:bg-[#EC3C7C] transition-colors" onClick={handleAddToOwned}>
                 Add to Owned

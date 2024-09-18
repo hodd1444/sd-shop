@@ -26,6 +26,15 @@
             "rarity": "Elite",
             "color": "#F9D342",
             "items": [10,11,12,13,14]
+        },
+        {
+            "id": 4,
+            "name": "Cyberlord Bundle",
+            "price": "4,800",
+            "image": "/vault/weapons/cyberlord/cyberlord_bundle.webp",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "items": [15,16,17,18]
         }
     ],
     "items": [
@@ -270,6 +279,207 @@
             "color": "#B661FF",
             "bundle": 3,
             "variants": []
+        },
+        {
+            "id": 15,
+            "name": "Cyberlord M67 Reaver",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cyberlord/m67_reaver/cyberlord_m67_reaver.webp",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 4,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/cyberlord_m67_reaver.webp"
+                },
+                {
+                    "id": 2,
+                    "name": "Ritual",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/cyberlord_m67_reaver_ritual.webp"
+                },
+                {
+                    "id": 3,
+                    "name": "Slime",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/cyberlord_m67_reaver_slime.webp"
+                },
+                {
+                    "id": 4,
+                    "name": "Ember",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/cyberlord_m67_reaver_ember.webp"
+                }
+            ],
+            "animations": [
+                {
+                    "id": 1,
+                    "name": "Firing Upgrades",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/animations/firing_upgrades.mp4"
+                },
+                {
+                    "id": 2,
+                    "name": "Kill Ceremony",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/animations/kill_ceremony.mp4"
+                },
+                {
+                    "id": 3,
+                    "name": "VFX",
+                    "image": "/vault/weapons/cyberlord/m67_reaver/animations/VFX.mp4"
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Cyberlord M18 Drummer",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cyberlord/m18_drummer/cyberlord_m18_drummer.webp",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 4,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/cyberlord_m18_drummer.webp"
+                },
+                {
+                    "id": 2,
+                    "name": "Ritual",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/cyberlord_m18_drummer_ritual.webp"
+                },
+                {
+                    "id": 3,
+                    "name": "Slime",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/cyberlord_m18_drummer_slime.webp"
+                },
+                {
+                    "id": 4,
+                    "name": "Ember",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/cyberlord_m18_drummer_ember.webp"
+                }
+            ],
+            "animations": [
+                {
+                    "id": 1,
+                    "name": "Firing Upgrades",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/animations/firing_upgrades.mp4"
+                },
+                {
+                    "id": 2,
+                    "name": "Kill Ceremony",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/animations/kill_ceremony.mp4"
+                },
+                {
+                    "id": 3,
+                    "name": "VFX",
+                    "image": "/vault/weapons/cyberlord/m18_drummer/animations/VFX.mp4"
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Cyberlord Duster RX6",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cyberlord/duster_rx6/cyberlord_duster_rx6.webp",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 4,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/cyberlord_duster_rx6.webp"
+                },
+                {
+                    "id": 2,
+                    "name": "Ritual",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/cyberlord_duster_rx6_ritual.webp"
+                },
+                {
+                    "id": 3,
+                    "name": "Slime",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/cyberlord_duster_rx6_slime.webp"
+                },
+                {
+                    "id": 4,
+                    "name": "Ember",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/cyberlord_duster_rx6_ember.webp"
+                }
+            ],
+            "animations": [
+                {
+                    "id": 1,
+                    "name": "Firing Upgrades",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/animations/firing_upgrades.mp4"
+                },
+                {
+                    "id": 2,
+                    "name": "Kill Ceremony",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/animations/kill_ceremony.mp4"
+                },
+                {
+                    "id": 3,
+                    "name": "VFX",
+                    "image": "/vault/weapons/cyberlord/duster_rx6/animations/VFX.mp4"
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Cyberlord Shiv",
+            "type": "weapon",
+            "price": "bundle",
+            "image": "/vault/weapons/cyberlord/shiv/cyberlord_shiv.webp",
+            "rarity": "Masterpiece",
+            "color": "#EA3546",
+            "bundle": 4,
+            "variants": [
+                {
+                    "id": 1,
+                    "name": "Default",
+                    "image": "/vault/weapons/cyberlord/shiv/cyberlord_shiv.webp"
+                },
+                {
+                    "id": 2,
+                    "name": "Ritual",
+                    "image": "/vault/weapons/cyberlord/shiv/cyberlord_shiv_ritual.webp"
+                },
+                {
+                    "id": 3,
+                    "name": "Slime",
+                    "image": "/vault/weapons/cyberlord/shiv/cyberlord_shiv_slime.webp"
+                },
+                {
+                    "id": 4,
+                    "name": "Ember",
+                    "image": "/vault/weapons/cyberlord/shiv/cyberlord_shiv_ember.webp"
+                }
+            ],
+            "animations": [
+                {
+                    "id": 1,
+                    "name": "Firing Upgrades",
+                    "image": "/vault/weapons/cyberlord/shiv/animations/firing_upgrades.mp4"
+                },
+                {
+                    "id": 2,
+                    "name": "Kill Ceremony",
+                    "image": "/vault/weapons/cyberlord/shiv/animations/kill_ceremony.mp4"
+                },
+                {   
+                    "id": 3,
+                    "name": "VFX",
+                    "image": "/vault/weapons/cyberlord/shiv/animations/VFX.mp4"
+                },
+                {
+                    "id": 4,
+                    "name": "VFX",
+                    "image": "/vault/weapons/cyberlord/shiv/animations/VFX.mp4"
+                }
+            ]
         }
     ]
 }
