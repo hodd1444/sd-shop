@@ -325,7 +325,7 @@
                 {
                     "id": 3,
                     "name": "VFX",
-                    "image": "/vault/weapons/cyberlord/m67_reaver/animations/vfx.mp4"
+                    "image": "/vault/weapons/cyberlord/m67_reaver/animations/effects.mp4"
                 }
             ]
         },
@@ -374,7 +374,7 @@
                 {
                     "id": 3,
                     "name": "VFX",
-                    "image": "/vault/weapons/cyberlord/m18_drummer/animations/vfx.mp4"
+                    "image": "/vault/weapons/cyberlord/m18_drummer/animations/effects.mp4"
                 }
             ]
         },
@@ -423,7 +423,7 @@
                 {
                     "id": 3,
                     "name": "VFX",
-                    "image": "/vault/weapons/cyberlord/duster_rx6/animations/vfx.mp4"
+                    "image": "/vault/weapons/cyberlord/duster_rx6/animations/effects.mp4"
                 }
             ]
         },
@@ -472,7 +472,7 @@
                 {   
                     "id": 3,
                     "name": "VFX",
-                    "image": "/vault/weapons/cyberlord/shiv/animations/vfx.mp4"
+                    "image": "/vault/weapons/cyberlord/shiv/animations/effects.mp4"
                 }
             ]
         }
