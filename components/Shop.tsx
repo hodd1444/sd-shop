@@ -43,40 +43,21 @@ const bundles2 = [
 const bundles3 = [
   {
     id: 1,
-    name: "Wasabi Bundle",
-    price: "2,600",
-    image: "/shop_091024/wasabi_bundle/wasabi_bundle.webp",
-    imageSet: [
-      {
-        id: 0,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/BG.webp",
-      },
-      {
-        id: 1,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/1.webp",
-      },
-      {
-        id: 2,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/2.webp",
-      },
-      {
-        id: 3,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/3.webp",
-      },
-      {
-        id: 4,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/4.webp",
-      },
-      {
-        id: 5,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/5.webp",
-      },
-      {
-        id: 6,
-        src: "/shop_091024/wasabi_bundle/wasabi_bundle_splashart/6.webp",
-      },], // null, bundle.image rendered as a fallback
-    rarity: "purple",
-    color: "#B661FF",
+    name: "Hopscotch",
+    price: "1,500",
+    image: "/shop_092424/hopscotch.webp",
+    imageSet: [],
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 2,
+    name: "Draco Inferno Bundle",
+    price: "3,400",
+    image: "/shop_092424/draco_inferno_bundle.webp",
+    imageSet: [],
+    rarity: "yellow",
+    color: "#F9B428",
   }
 ]
 
@@ -417,7 +398,7 @@ export default function Shop() {
 
   // Featured 2
   useEffect(() => {
-    const featured2ResetDate = new Date(Date.UTC(2024, 8, 24, 20, 0, 0, 0));
+    const featured2ResetDate = new Date(Date.UTC(2024, 9, 8, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured2 = () => {
@@ -510,7 +491,16 @@ export default function Shop() {
 
   return (
     <div className="min-h-screen bg-[#272727] text-white p-8 flex flex-col items-center justify-center">
+
       <div className="max-w-5xl w-full">
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">FEATURED</h2>
+          <p className="text-gray-400">{featured2TimeLeft}</p>
+        </div>
+
+        <div className="flex flex-col justify-between gap-8">
+          <BundleBannerCard bundles={bundles3} />
+        </div>
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">FEATURED</h2>
           <p className="text-gray-400">{featured1TimeLeft}</p>
@@ -527,15 +517,6 @@ export default function Shop() {
 
         <div className="flex flex-col justify-between gap-8">
           <BundleBannerCard bundles={bundles2} />
-        </div>
-
-        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
-          <h2 className="text-2xl font-semibold">FEATURED</h2>
-          <p className="text-gray-400">{featured2TimeLeft}</p>
-        </div>
-
-        <div className="flex flex-col justify-between gap-8">
-          <BundleBannerCard bundles={bundles3} />
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
