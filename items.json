@@ -35,6 +35,15 @@
             "rarity": "Masterpiece",
             "color": "#EA3546",
             "items": [15,16,17,18]
+        },
+        {
+            "id": 5,
+            "name": "Draco Inferno Bundle",
+            "price": "1,400",
+            "image": "/vault/weapons/draco_inferno/draco_inferno_bundle.webp",
+            "rarity": "Elite",
+            "color": "#B661FF",
+            "items": [19,20,21,22,23]
         }
     ],
     "items": [
