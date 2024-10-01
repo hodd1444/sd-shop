@@ -172,7 +172,7 @@ const offers2 = [
     price: "800",
     image: "/shop_100124/mako_beserker_rb3.webp",
     rarity: "purple",
-    color: ""
+    color: "#B661FF"
   }
 ];
 
@@ -212,7 +212,7 @@ const offers3 = [
   {
     id: 5,
     name: "Eternal Warrior Harpe",
-    price: "800",
+    price: "1,200",
     image: "/shop_100124/eternal_warrior_harpe.webp",
     rarity: "orange",
     color: "#F9B428",
