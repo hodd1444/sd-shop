@@ -6,57 +6,31 @@ import { BundleBannerCard } from "./BundleBannerCard";
 const bundles1 = [
   {
     id: 1,
-    name: "Extinction Bundle",
-    price: "2,600",
-    image: "/shop_100824/extinction_bundle.webp",
-    imageSet: [],
-    rarity: "purple",
-    color: "#B661FF",
-  },
-]
-
-const bundles2 = [
-  {
-    id: 1,
-    name: "Alchemist Bundle",
-    price: "7,000",
-    image: "/shop_100124/alchemist_bundle.webp",
-    imageSet: [],
-    rarity: "red",
-    color: "#EA3546",
-  }
-]
-
-const spotlight1 = [
-  {
-    id: 1,
-    name: "District Defender Bundle",
+    name: "Bloodlust",
     price: "1,500",
-    image: "/shop_091724/district_defender_bundle.webp",
+    image: "/shop_101524/bloodlust.webp",
+    imageSet: [],
     rarity: "red",
     color: "#EA3546",
   },
   {
     id: 2,
-    name: "Eternal Warrior Crusader",
-    price: "1,200",
-    image: "/shop_091724/eternal_warrior_crusader.webp",
+    name: "Bloodlust Bundle",
+    price: "3,400",
+    image: "/shop_101524/bloodlust_bundle.webp",
+    imageSet: [],
     rarity: "orange",
     color: "#F9B428",
-  },
+  }
+]
+
+const bundles2 = [
   {
-    id: 3,
-    name: "Troublemaker Cyclone",
-    price: "800",
-    image: "/shop_091724/troublemaker_cyclone.webp",
-    rarity: "purple",
-    color: "#B661FF",
-  },
-  {
-    id: 4,
-    name: "Troublemaker M18 Drummer",
-    price: "800",
-    image: "/shop_091724/troublemaker_m18_drummer.webp",
+    id: 1,
+    name: "Extinction Bundle",
+    price: "2,600",
+    image: "/shop_100824/extinction_bundle.webp",
+    imageSet: [],
     rarity: "purple",
     color: "#B661FF",
   },
@@ -73,27 +47,27 @@ const offers1 = [
   },
   {
     id: 2,
-    name: "Mako Buzzsaw RT40",
-    price: "800",
-    image: "/shop_090324/mako_buzzsaw_rt40.webp",
-    rarity: "purple",
-    color: "#B661FF",
+    name: "Honor in Battle",
+    price: "1,500",
+    image: "/shop_091024/spotlight/honor_in_battle.png",
+    rarity: "red",
+    color: "#EA3546",
   },
   {
     id: 3,
-    name: "Mako Harpe",
-    price: "800",
-    image: "/shop_090324/mako_harpe.webp",
-    rarity: "purple",
-    color: "#B661FF",
+    name: "04",
+    price: "1,000",
+    image: "/shop_090324/04.webp",
+    rarity: "orange",
+    color: "#F9B428",
   },
   {
     id: 4,
-    name: "Eternal Warrior M49 Fury",
-    price: "1,200",
-    image: "/shop_090324/eternal_warrior_m49_fury.webp",
-    rarity: "orange",
-    color: "#F9B428",
+    name: "Troublemaker Cyclone",
+    price: "800",
+    image: "/shop_091724/troublemaker_cyclone.webp",
+    rarity: "purple",
+    color: "#B661FF",
   },
 ];
 
@@ -108,9 +82,9 @@ const offers2 = [
   },
   {
     id: 2,
-    name: "Prince",
+    name: "High Performance",
     price: "1,500",
-    image: "/shop_090324/prince.webp",
+    image: "/shop_090324/high_performance.webp",
     rarity: "red",
     color: "#EA3546",
   },
@@ -124,60 +98,36 @@ const offers2 = [
   },
   {
     id: 4,
-    name: "04",
-    price: "1,000",
-    image: "/shop_090324/04.webp",
-    rarity: "orange",
-    color: "#F9B428",
+    name: "Mako M2 Carbon",
+    price: "800",
+    image: "/shop_101524/mako_m2_carbon.webp",
+    rarity: "purple",
+    color: "#B661FF",
   },
   {
     id: 5,
-    name: "Mako Beserker RB3",
-    price: "800",
-    image: "/shop_100124/mako_beserker_rb3.webp",
-    rarity: "purple",
-    color: "#B661FF"
+    name: "Eternal Warrior Duster RX6",
+    price: "1,200",
+    image: "/shop_101524/eternal_warrior_duster_rx6.webp",
+    rarity: "orange",
+    color: "#F9B428"
   }
 ];
 
 const offers3 = [
   {
     id: 1,
-    name: "High Performance",
+    name: "Prince",
     price: "1,500",
-    image: "/shop_090324/high_performance.webp",
+    image: "/shop_090324/prince.webp",
     rarity: "red",
     color: "#EA3546",
   },
   {
     id: 2,
-    name: "Elegant Operative",
-    price: "1,500",
-    image: "/shop_090324/elegant_operative.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 3,
-    name: "Popstar",
-    price: "1,500",
-    image: "/shop_090324/popstar.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 4,
     name: "Beast",
     price: "1,000",
     image: "/shop_090324/beast.webp",
-    rarity: "orange",
-    color:"#F9B428"
-  },
-  {
-    id: 5,
-    name: "Eternal Warrior Harpe",
-    price: "1,200",
-    image: "/shop_100124/eternal_warrior_harpe.webp",
     rarity: "orange",
     color: "#F9B428",
   },
@@ -188,11 +138,10 @@ export default function Shop() {
   const [featured1TimeLeft, setFeatured1TimeLeft] = useState("23:59:59");
   const [featured2TimeLeft, setFeatured2TimeLeft] = useState("23:59:59");
   const [spotlight1TimeLeft, setSpotlight1TimeLeft] = useState("23:59:59");
-  const [spotlight2TimeLeft, setSpotlight2TimeLeft] = useState("23:59:59");
 
   const shopAvailable = true;
   useEffect(() => {
-    const offerResetDate = new Date(Date.UTC(2024, 9, 15, 20, 0, 0, 0)); // October is month 9 (0-indexed)
+    const offerResetDate = new Date(Date.UTC(2024, 9, 29, 20, 0, 0, 0)); // October is month 9 (0-indexed)
 
     const updateCountdown = () => {
       const now = new Date();
@@ -221,7 +170,7 @@ export default function Shop() {
 
   // Featured 1
   useEffect(() => {
-    const featured1ResetDate = new Date(Date.UTC(2024, 9, 22, 20, 0, 0, 0));
+    const featured1ResetDate = new Date(Date.UTC(2024, 10, 5, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured = () => {
@@ -251,7 +200,7 @@ export default function Shop() {
 
   // Featured 2
   useEffect(() => {
-    const featured2ResetDate = new Date(Date.UTC(2024, 9, 15, 20, 0, 0, 0));
+    const featured2ResetDate = new Date(Date.UTC(2024, 9, 22, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured2 = () => {
@@ -311,37 +260,6 @@ export default function Shop() {
     return () => clearInterval(countdownInterval);
   }, []);
 
-  // Spotlight 2
-  useEffect(() => {
-    const spotlight2ResetDate = new Date(Date.UTC(2024, 9, 8, 20, 0, 0, 0));
-
-    console.log(spotlight2ResetDate);
-
-    const updateCountdownSpotlight2 = () => {
-      const now = new Date();
-      const timeDiff = spotlight2ResetDate.getTime() - now.getTime();
-
-      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-      );
-      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-
-      setSpotlight2TimeLeft(
-        `${days.toString()} DAYS ${hours
-          .toString()
-          .padStart(2, "0")} HOURS ${minutes
-            .toString()
-            .padStart(2, "0")} MINUTES`,
-      );
-    };
-
-    updateCountdownSpotlight2();
-    const countdownInterval = setInterval(updateCountdownSpotlight2, 60000);
-
-    return () => clearInterval(countdownInterval);
-  }, []);
-
   return (
     <div className="min-h-screen bg-[#272727] text-white p-8 flex flex-col items-center justify-center">
 
@@ -361,44 +279,6 @@ export default function Shop() {
 
         <div className="flex flex-col justify-between gap-8">
           <BundleBannerCard bundles={bundles2} />
-        </div>
-
-        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
-          <h2 className="text-2xl font-semibold">SPOTLIGHT</h2>
-          <p className="text-gray-400">{spotlight1TimeLeft}</p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {spotlight1.map((item, index) => (
-            <div
-              key={item.id}
-              className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index < 1 ? "sm:col-span-2" : "sm:col-span-1"
-                }`}
-            >
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-3/4 object-cover"
-              />
-              <div className="flex flex-col justify-between p-4">
-                <h3
-                  className={`text-lg font-semibold mb-2`}
-                  style={{
-                    color: item.color,
-                  }}
-                >
-                  {item.name}
-                </h3>
-                <div className="flex items-center text-[#bdbdbd]">
-                  <img
-                    src="/spectre_points_gray.webp"
-                    className="w-5 h-5 mr-1"
-                  />
-                  <span>{item.price}</span>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
