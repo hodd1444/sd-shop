@@ -24,17 +24,6 @@ const bundles1 = [
   }
 ]
 
-const bundles2 = [
-  {
-    id: 1,
-    name: "Extinction Bundle",
-    price: "2,600",
-    image: "/shop_100824/extinction_bundle.webp",
-    imageSet: [],
-    rarity: "purple",
-    color: "#B661FF",
-  },
-]
 
 const offers1 = [
   {
@@ -271,14 +260,6 @@ export default function Shop() {
 
         <div className="flex flex-col justify-between gap-8">
           <BundleBannerCard bundles={bundles1} />
-        </div>
-        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
-          <h2 className="text-2xl font-semibold">FEATURED</h2>
-          <p className="text-gray-400">{featured2TimeLeft}</p>
-        </div>
-
-        <div className="flex flex-col justify-between gap-8">
-          <BundleBannerCard bundles={bundles2} />
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
