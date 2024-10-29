@@ -455,13 +455,13 @@
         }
     },
     {
-        "name": "Berserker RB3",
+        "name": "Beserker RB3",
         "description": "High rate of fire belt-fed machine gun. Recoil becomes easier to manage over time. Rate of fire increases during full auto.\n\nPenetration: High",
         "type": "Machine Gun",
         "category": "Main",
         "price": [3800],
         "bundleId": [13],
-        "image": "/vault/weapons/default/berserker_rb3.webp",
+        "image": "/vault/weapons/default/beserker_rb3.webp",
         "stats": {
             "runSpeed": 4.5,
             "magazine": 75,

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGun, faDollarSign, faList, faCrosshairs, faRunning, faHourglassHalf, IconDefinition, faRuler, faSkull, faUserAlt, faShoePrints } from '@fortawesome/free-solid-svg-icons';
+import { faGun, faDollarSign, faList, faCrosshairs, faRunning, faHourglassHalf, IconDefinition, faRuler, faSkull, faUserAlt, faShoePrints, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { Weapon } from './WeaponList';
 import items from '@/items.json';
 
@@ -63,30 +63,52 @@ const WeaponViewer: React.FC<{ weapon: Weapon }> = ({ weapon }) => {
                         <StatItem icon={faHourglassHalf} value={`${weapon.stats.reloadTime}s`} label="Reload Time" maxValue={7} />
                     </div>
                     <h2 className="text-2xl font-semibold mt-6 mb-2">Damage</h2>
-                    {Object.entries(weapon.stats.damage).map(([range, damageValues]) => (
-                        <div key={range} className="mb-6 bg-[#333333] rounded-lg p-4">
-                            <h3 className="text-lg font-semibold text-[#FFCB00] mb-3 flex items-center">
-                                <FontAwesomeIcon icon={faRuler} className="mr-2" /> {range}
-                            </h3>
+                    {weapon.type === "Melee" ? (
+                        <div className="mb-6 bg-[#333333] rounded-lg p-4">
                             <div className="grid grid-cols-3 gap-4">
                                 <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
-                                    <FontAwesomeIcon icon={faSkull} className="text-[#EC3C7C] text-2xl mb-2" />
-                                    <span className="font-bold text-lg">{damageValues.head}</span>
-                                    <span className="text-xs text-gray-300">Head</span>
+                                    <FontAwesomeIcon icon={faPerson} className="text-[#EC3C7C] text-2xl mb-2" />
+                                    <span className="font-bold text-lg">{50}</span>
+                                    <span className="text-xs text-gray-300">Front</span>
                                 </div>
                                 <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
-                                    <FontAwesomeIcon icon={faUserAlt} className="text-[#EC3C7C] text-2xl mb-2" />
-                                    <span className="font-bold text-lg">{damageValues.body}</span>
-                                    <span className="text-xs text-gray-300">Body</span>
+                                    <FontAwesomeIcon icon={faPerson} className="text-[#EC3C7C] text-2xl mb-2" />
+                                    <span className="font-bold text-lg">{150}</span>
+                                    <span className="text-xs text-gray-300">Back</span>
                                 </div>
                                 <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
-                                    <FontAwesomeIcon icon={faShoePrints} className="text-[#EC3C7C] text-2xl mb-2" />
-                                    <span className="font-bold text-lg">{damageValues.legs}</span>
-                                    <span className="text-xs text-gray-300">Legs</span>
+                                    <FontAwesomeIcon icon={faPerson} className="text-[#EC3C7C] text-2xl mb-2" />
+                                    <span className="font-bold text-lg">{50}</span>
+                                    <span className="text-xs text-gray-300">Side</span>
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ) : (
+                        Object.entries(weapon.stats.damage).map(([range, damageValues]) => (
+                            <div key={range} className="mb-6 bg-[#333333] rounded-lg p-4">
+                                <h3 className="text-lg font-semibold text-[#FFCB00] mb-3 flex items-center">
+                                    <FontAwesomeIcon icon={faRuler} className="mr-2" /> {range}
+                                </h3>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
+                                        <FontAwesomeIcon icon={faSkull} className="text-[#EC3C7C] text-2xl mb-2" />
+                                        <span className="font-bold text-lg">{damageValues.head}</span>
+                                        <span className="text-xs text-gray-300">Head</span>
+                                    </div>
+                                    <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
+                                        <FontAwesomeIcon icon={faUserAlt} className="text-[#EC3C7C] text-2xl mb-2" />
+                                        <span className="font-bold text-lg">{damageValues.body}</span>
+                                        <span className="text-xs text-gray-300">Body</span>
+                                    </div>
+                                    <div className="flex flex-col items-center bg-[#444444] p-3 rounded-md">
+                                        <FontAwesomeIcon icon={faShoePrints} className="text-[#EC3C7C] text-2xl mb-2" />
+                                        <span className="font-bold text-lg">{damageValues.legs}</span>
+                                        <span className="text-xs text-gray-300">Legs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    )}
                     
                 </div>
             </div>

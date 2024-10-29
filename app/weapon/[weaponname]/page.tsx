@@ -16,7 +16,7 @@ export default function WeaponPage() {
 
     console.log(weaponname);
 
-    const weapon = weapons.find((w) => w.name === weaponname) as Weapon;
+    const weapon = weapons.find((w) => w.name.toLowerCase() === weaponname?.toLowerCase()) as Weapon;
     if (!weapon) {
         return <div>Weapon not found</div>;
     }
