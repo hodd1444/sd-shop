@@ -36,6 +36,41 @@ const offers1 = [
   },
   {
     id: 2,
+    name: "Prince",
+    price: "1,500",
+    image: "/shop_090324/prince.webp",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 3,
+    name: "Elegant Operative",
+    price: "1,500",
+    image: "/shop_090324/elegant_operative.webp",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 4,
+    name: "Mako Harpe",
+    price: "800",
+    image: "/shop_090324/mako_harpe.webp",
+    rarity: "purple",
+    color: "#B661FF",
+  },
+];
+
+const offers2 = [
+  {
+    id: 1,
+    name: "Popstar",
+    price: "1,500",
+    image: "/shop_090324/popstar.webp",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 2,
     name: "Honor in Battle",
     price: "1,500",
     image: "/shop_091024/spotlight/honor_in_battle.png",
@@ -44,11 +79,11 @@ const offers1 = [
   },
   {
     id: 3,
-    name: "04",
-    price: "1,000",
-    image: "/shop_090324/04.webp",
-    rarity: "orange",
-    color: "#F9B428",
+    name: "Mako Beserker RB3",
+    price: "1,500",
+    image: "/shop_100124/mako_beserker_rb3.webp",
+    rarity: "red",
+    color: "#EA3546",
   },
   {
     id: 4,
@@ -58,68 +93,57 @@ const offers1 = [
     rarity: "purple",
     color: "#B661FF",
   },
-];
-
-const offers2 = [
-  {
-    id: 1,
-    name: "Primal",
-    price: "1,500",
-    image: "/shop_090324/primal.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 2,
-    name: "High Performance",
-    price: "1,500",
-    image: "/shop_090324/high_performance.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 3,
-    name: "Outrider",
-    price: "1,500",
-    image: "/shop_090324/outrider.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 4,
-    name: "Mako M2 Carbon",
-    price: "800",
-    image: "/shop_101524/mako_m2_carbon.webp",
-    rarity: "purple",
-    color: "#B661FF",
-  },
   {
     id: 5,
-    name: "Eternal Warrior Duster RX6",
-    price: "1,200",
-    image: "/shop_101524/eternal_warrior_duster_rx6.webp",
-    rarity: "orange",
-    color: "#F9B428"
+    name: "Troublemaker M10 Brat",
+    price: "800",
+    image: "/shop_102924/troublemaker_m10_brat.webp",
+    rarity: "purple",
+    color: "#B661FF"
   }
 ];
 
 const offers3 = [
   {
     id: 1,
-    name: "Prince",
-    price: "1,500",
-    image: "/shop_090324/prince.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 2,
-    name: "Beast",
+    name: "04",
     price: "1,000",
-    image: "/shop_090324/beast.webp",
+    image: "/shop_090324/04.webp",
     rarity: "orange",
     color: "#F9B428",
   },
+  {
+    id: 2,
+    name: "Eternal Warrior M49 Fury",
+    price: "1,200",
+    image: "/shop_090324/eternal_warrior_m49_fury.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 3,
+    name: "Eternal Warrior Duster RX6",
+    price: "1,200",
+    image: "/shop_101524/eternal_warrior_duster_rx6.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 4,
+    name: "Troublemaker M18 Drummer",
+    price: "800",
+    image: "/shop_091724/troublemaker_m18_drummer.webp",
+    rarity: "purple",
+    color: "#B661FF",
+  },
+  {
+    id: 5,
+    name: "Starbright",
+    price: "1,000",
+    image: "/shop_090324/starbright.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  }
 ];
 
 export default function Shop() {
@@ -130,7 +154,7 @@ export default function Shop() {
 
   const shopAvailable = true;
   useEffect(() => {
-    const offerResetDate = new Date(Date.UTC(2024, 9, 29, 20, 0, 0, 0)); // October is month 9 (0-indexed)
+    const offerResetDate = new Date(Date.UTC(2024, 10, 12, 20, 0, 0, 0)); // October is month 9 (0-indexed)
 
     const updateCountdown = () => {
       const now = new Date();

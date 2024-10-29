@@ -8,11 +8,11 @@ import {
 
 export const BundleBannerCard = ({ bundles }: any) => {
   return bundles.map((item: any) => (
-    <Link
+   /*  <Link
       href={`/bundle/${item.name.toLowerCase().split(" ").join("-")}`}
       className="hover:cursor-default"
       key={item.id}
-    >
+    > */
       <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform  ">
         {item.imageSet.length === 0 ? (
           <img
@@ -56,6 +56,6 @@ export const BundleBannerCard = ({ bundles }: any) => {
               </div>
             </div>
           </div>
-    </Link>
+  /*   </Link> */
   ));
 };
