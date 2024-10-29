@@ -80,10 +80,10 @@ const offers2 = [
   {
     id: 3,
     name: "Mako Beserker RB3",
-    price: "1,500",
+    price: "800",
     image: "/shop_100124/mako_beserker_rb3.webp",
-    rarity: "red",
-    color: "#EA3546",
+    rarity: "purple",
+    color: "#B661FF",
   },
   {
     id: 4,
