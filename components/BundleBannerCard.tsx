@@ -13,7 +13,9 @@ export const BundleBannerCard = ({ bundles }: any) => {
       className="hover:cursor-default"
       key={item.id}
     > */
-      <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform  ">
+      <div className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform  "
+      key={item.id}
+      >
         {item.imageSet.length === 0 ? (
           <img
             src={item.image}
