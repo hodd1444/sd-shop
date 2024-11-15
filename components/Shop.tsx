@@ -6,21 +6,24 @@ import { BundleBannerCard } from "./BundleBannerCard";
 const bundles1 = [
   {
     id: 1,
-    name: "Bloodlust",
+    name: "Syndicate Bundle",
+    price: "2,600",
+    image: "/shop_111524/syndicate_bundle.webp",
+    imageSet: [],
+    rarity: "purple",
+    color: "#B661FF",
+  },
+]
+
+const bundles2 = [
+  {
+    id: 1,
+    name: "Killer Kawaii",
     price: "1,500",
-    image: "/shop_101524/bloodlust.webp",
+    image: "/shop_111524/killer_kawaii.webp",
     imageSet: [],
     rarity: "red",
     color: "#EA3546",
-  },
-  {
-    id: 2,
-    name: "Bloodlust Bundle",
-    price: "3,400",
-    image: "/shop_101524/bloodlust_bundle.webp",
-    imageSet: [],
-    rarity: "orange",
-    color: "#F9B428",
   }
 ]
 
@@ -36,9 +39,9 @@ const offers1 = [
   },
   {
     id: 2,
-    name: "Prince",
+    name: "Honor in Battle",
     price: "1,500",
-    image: "/shop_090324/prince.webp",
+    image: "/shop_091024/spotlight/honor_in_battle.png",
     rarity: "red",
     color: "#EA3546",
   },
@@ -52,9 +55,9 @@ const offers1 = [
   },
   {
     id: 4,
-    name: "Mako Harpe",
+    name: "Mako Buzzsaw RT40",
     price: "800",
-    image: "/shop_090324/mako_harpe.webp",
+    image: "/shop_090324/mako_buzzsaw_rt40.webp",
     rarity: "purple",
     color: "#B661FF",
   },
@@ -63,57 +66,22 @@ const offers1 = [
 const offers2 = [
   {
     id: 1,
-    name: "Popstar",
-    price: "1,500",
-    image: "/shop_090324/popstar.webp",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 2,
-    name: "Honor in Battle",
-    price: "1,500",
-    image: "/shop_091024/spotlight/honor_in_battle.png",
-    rarity: "red",
-    color: "#EA3546",
-  },
-  {
-    id: 3,
-    name: "Mako Beserker RB3",
-    price: "800",
-    image: "/shop_100124/mako_beserker_rb3.webp",
-    rarity: "purple",
-    color: "#B661FF",
-  },
-  {
-    id: 4,
-    name: "Troublemaker Cyclone",
-    price: "800",
-    image: "/shop_091724/troublemaker_cyclone.webp",
-    rarity: "purple",
-    color: "#B661FF",
-  },
-  {
-    id: 5,
-    name: "Troublemaker M10 Brat",
-    price: "800",
-    image: "/shop_102924/troublemaker_m10_brat.webp",
-    rarity: "purple",
-    color: "#B661FF"
-  }
-];
-
-const offers3 = [
-  {
-    id: 1,
-    name: "04",
+    name: "Inclement Weather Bundle",
     price: "1,000",
-    image: "/shop_090324/04.webp",
+    image: "/shop_091024/spotlight/inclement_weather_bundle.png",
     rarity: "orange",
     color: "#F9B428",
   },
   {
     id: 2,
+    name: "Eternal Warrior Crusader",
+    price: "1,200",
+    image: "/shop_091724/eternal_warrior_crusader.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 3,
     name: "Eternal Warrior M49 Fury",
     price: "1,200",
     image: "/shop_090324/eternal_warrior_m49_fury.webp",
@@ -121,12 +89,39 @@ const offers3 = [
     color: "#F9B428",
   },
   {
-    id: 3,
+    id: 4,
     name: "Eternal Warrior Duster RX6",
     price: "1,200",
-    image: "/shop_101524/eternal_warrior_duster_rx6.webp",
+    image: "/shop_090324/eternal_warrior_duster_rx6.webp",
     rarity: "orange",
     color: "#F9B428",
+  },
+];
+
+const offers3 = [
+  {
+    id: 1,
+    name: "High Performance",
+    price: "1,500",
+    image: "/shop_090324/high_performance.webp",
+    rarity: "red",
+    color: "#EA3546",
+  },
+  {
+    id: 2,
+    name: "Beast",
+    price: "1,000",
+    image: "/shop_090324/beast.webp",
+    rarity: "orange",
+    color: "#F9B428",
+  },
+  {
+    id: 3,
+    name: "Troublemaker Cyclone",
+    price: "800",
+    image: "/shop_091724/troublemaker_cyclone.webp",
+    rarity: "purple",
+    color: "#B661FF",
   },
   {
     id: 4,
@@ -138,11 +133,11 @@ const offers3 = [
   },
   {
     id: 5,
-    name: "Starbright",
-    price: "1,000",
-    image: "/shop_090324/starbright.webp",
-    rarity: "orange",
-    color: "#F9B428",
+    name: "Troublemaker M10 Brat",
+    price: "800",
+    image: "/shop_102924/troublemaker_m10_brat.webp",
+    rarity: "purple",
+    color: "#B661FF",
   }
 ];
 
@@ -154,7 +149,7 @@ export default function Shop() {
 
   const shopAvailable = true;
   useEffect(() => {
-    const offerResetDate = new Date(Date.UTC(2024, 10, 12, 20, 0, 0, 0)); // October is month 9 (0-indexed)
+    const offerResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0)); // October is month 9 (0-indexed)
 
     const updateCountdown = () => {
       const now = new Date();
@@ -183,7 +178,7 @@ export default function Shop() {
 
   // Featured 1
   useEffect(() => {
-    const featured1ResetDate = new Date(Date.UTC(2024, 10, 5, 20, 0, 0, 0));
+    const featured1ResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured = () => {
@@ -213,7 +208,7 @@ export default function Shop() {
 
   // Featured 2
   useEffect(() => {
-    const featured2ResetDate = new Date(Date.UTC(2024, 9, 22, 20, 0, 0, 0));
+    const featured2ResetDate = new Date(Date.UTC(2024, 10, 19, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured2 = () => {
@@ -287,6 +282,15 @@ export default function Shop() {
         </div>
 
         <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
+          <h2 className="text-2xl font-semibold">FEATURED</h2>
+          <p className="text-gray-400">{featured2TimeLeft}</p>
+        </div>
+
+        <div className="flex flex-col justify-between gap-8">
+          <BundleBannerCard bundles={bundles2} />
+        </div>
+
+        <div className="flex flex-row items-center align-middle mb-4 mt-8 gap-4">
           <h2 className="text-2xl font-semibold">OFFERS</h2>
           <p className="text-gray-400">{offerTimeLeft}</p>
         </div>
@@ -324,10 +328,11 @@ export default function Shop() {
           ))}
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-8">
-          {offers2.map((item) => (
+          {offers2.map((item, index) => (
             <div
-              key={item.id}
-              className="bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105"
+            key={item.id}
+            className={`bg-[#333333] rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 ${index === 0 ? "sm:col-span-2" : "sm:col-span-1"
+              }`}
             >
               <img
                 src={item.image}
