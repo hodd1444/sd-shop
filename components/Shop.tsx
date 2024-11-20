@@ -6,6 +6,18 @@ import { BundleBannerCard } from "./BundleBannerCard";
 const bundles1 = [
   {
     id: 1,
+    name: "Quiet Killer",
+    price: "1,500",
+    image: "/shop_111924/quiet_killer.webp",
+    imageSet: [],
+    rarity: "red",
+    color: "#EA3546"
+  }
+]
+
+const bundles2 = [
+  {
+    id: 1,
     name: "Syndicate Bundle",
     price: "2,600",
     image: "/shop_111524/syndicate_bundle.webp",
@@ -13,18 +25,6 @@ const bundles1 = [
     rarity: "purple",
     color: "#B661FF",
   },
-]
-
-const bundles2 = [
-  {
-    id: 1,
-    name: "Killer Kawaii",
-    price: "1,500",
-    image: "/shop_111524/killer_kawaii.webp",
-    imageSet: [],
-    rarity: "red",
-    color: "#EA3546",
-  }
 ]
 
 
@@ -149,7 +149,7 @@ export default function Shop() {
 
   const shopAvailable = true;
   useEffect(() => {
-    const offerResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0)); // October is month 9 (0-indexed)
+    const offerResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0)); 
 
     const updateCountdown = () => {
       const now = new Date();
@@ -178,7 +178,7 @@ export default function Shop() {
 
   // Featured 1
   useEffect(() => {
-    const featured1ResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0));
+    const featured1ResetDate = new Date(Date.UTC(2024, 11, 3, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured = () => {
@@ -208,7 +208,7 @@ export default function Shop() {
 
   // Featured 2
   useEffect(() => {
-    const featured2ResetDate = new Date(Date.UTC(2024, 10, 19, 20, 0, 0, 0));
+    const featured2ResetDate = new Date(Date.UTC(2024, 10, 26, 20, 0, 0, 0));
 
 
     const updateCountdownFeatured2 = () => {
